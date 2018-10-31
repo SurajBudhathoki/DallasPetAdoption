@@ -56,4 +56,14 @@ module.exports  = function (app) {
         });
     });
 
+
+
+     //GET request for users
+     app.get('/api/users', function(req,res){
+        db.Users.findAll({}).then(function (rows)  {
+            res.json(rows)
+        }).catch(function(error) {
+            res.json({error : error});
+        });
+    });
 }

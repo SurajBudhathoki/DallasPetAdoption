@@ -150,3 +150,19 @@ body{
    
 }
 
+.pet {
+   
+   float: left;
+   width: 31%;
+   margin: 5px;
+  
+}
+
+.pet > p {
+    font-size: 18px;
+}
+
+.pet > h3 {
+    font-weight: bold;
+}
+  
