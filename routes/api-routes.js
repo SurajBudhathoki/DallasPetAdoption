@@ -6,7 +6,7 @@ const db = require('../models');
 
 module.exports  = function (app) {
 
-    //GET request
+    //GET request for pets
     app.get('/api/pets', function(req,res){
         db.Pets.findAll({}).then(function (rows)  {
             res.json(rows)
@@ -15,7 +15,7 @@ module.exports  = function (app) {
         });
     });
 
-    //POST request
+    //POST request for pets
     app.post('/api/pets', function(req,res){
         db.Pets.create(req.body).then(function (rows) {
             res.json({ success: true});

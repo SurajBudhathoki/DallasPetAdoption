@@ -1,0 +1,152 @@
+
+  
+  .navigation-clean-button{
+    background:#fff;
+    padding-top:10px;
+    padding-bottom:10px;
+    color:#333;
+    border-radius:0;
+    box-shadow:none;
+    border:none;
+    margin-bottom:0;
+  }
+  
+  
+  .navigation-clean-button .navbar-brand{
+    font-weight:bold;
+    color:inherit;
+  }
+  
+  .navigation-clean-button .navbar-brand:hover{
+    color:#222;
+  }
+  
+  .navigation-clean-button.navbar .navbar-nav > li > a{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  
+
+  .navigation-clean-button .actions .login{
+    margin-right:7px;
+    text-decoration:none;
+  }
+  
+
+  .navigation-clean-button .action-button, .navigation-clean-button .action-button:active{
+    background:#56c6c6;
+    border-radius:20px;
+    color:#fff;
+    box-shadow:none;
+    border:none;
+    text-shadow:none;
+    padding:10px 22px;
+    transition:background-color 0.25s;
+  }
+  
+  .navigation-clean-button .action-button:hover{
+    background:#66d7d7;
+  }
+  
+
+
+
+#myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 10px;
+}
+
+#myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 40px;
+}
+
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a{
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+}
+
+
+/* CSS used for positioning the footers at the bottom of the page. */
+
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+#content{
+    flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+    min-height: 200px;
+ }
+
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}
+
+.thumbnails {
+    list-style-type: none;
+}
+
+.containerMain {
+    background-image: url('/images/jumbotronbackground.jpg');
+  
+    background-size: cover;
+    padding: 200px;
+   
+}
+
