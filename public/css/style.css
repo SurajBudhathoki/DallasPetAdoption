@@ -166,3 +166,6 @@ body{
     font-weight: bold;
 }
   
+button {
+    margin: 10px;
+}

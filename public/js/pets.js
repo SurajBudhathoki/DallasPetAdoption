@@ -22,9 +22,9 @@ const renderPets = function(outputElement, data) {
 
         const output =  $(outputElement);
      
-        const listItems =  $("<li class='list-group-item mt-4 pet' display='inline'>");
+        const listItems =  $("<li class='list-group-item mt-4 pet' >");
         listItems.append(
-            $('<h3>').text(data[i].pet_name),
+            $("<h3 id ='name'>").text(data[i].pet_name),
             $('<p>').text('Type: ' + data[i].pet_type),
             $('<p>').text('Breed: ' + data[i].pet_breed),
             $('<p>').text('Kennel#: ' + data[i].kennel_number)
@@ -33,8 +33,19 @@ const renderPets = function(outputElement, data) {
         output.append(listItems);
     }
     
-            
+    
+          
    
 }
 
 findPets();
+
+
+$('#breed').on('keyup', function() {
+    let value = $(this).val().toLowerCase();
+    $('#petContent li').filter(function() {
+        
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) >-1)
+    })
+
+})
