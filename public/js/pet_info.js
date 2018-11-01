@@ -8,6 +8,7 @@ const findPet = function () {
     $.ajax({ url: `/api/pets/1`, method: 'GET' }).then(function (data) {
 
         renderPetInfo('#petInfo', data);
+        renderPetImage('#petImage', data);
     });
 }
 
@@ -37,6 +38,15 @@ const renderPetInfo = function(outputElement, data) {
 
      output.append(listItems, buttonDiv);
 
+}
+
+const renderPetImage = function(outputElement, data) {
+
+    const output  = $(outputElement);
+
+    const  imageHolder = $(`<img src = "${data.pet_image}">`);
+
+    output.append(imageHolder);
 }
 
 findPet();

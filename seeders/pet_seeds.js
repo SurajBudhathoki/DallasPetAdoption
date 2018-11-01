@@ -9,7 +9,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'CAROLINA DOG',
             kennel_number: 'LFD 009',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Lucy.jpg'
         },
 
         {
@@ -17,7 +18,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'PCD 14',
-            kennel_status: 'UNAVAILABLE'
+            kennel_status: 'UNAVAILABLE',
+            pet_image: '/images/Luna.jpg'
         },
 
         {
@@ -25,7 +27,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 093',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Bella.jpg'
         },
 
         {
@@ -33,7 +36,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 004',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Lola.jpg'
         },
 
 
@@ -42,7 +46,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'LFD 107',
-            kennel_status: 'UNAVAILABLE'
+            kennel_status: 'UNAVAILABLE',
+            pet_image: '/images/Daisy.jpg'
         },
 
         {
@@ -50,7 +55,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'LABRADOR RETR',
             kennel_number: 'NMOMS 4',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Boxer.jpg'
         },
 
         {
@@ -58,7 +64,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'PSD 12',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Jasmine.jpg'
         },
 
         {
@@ -66,7 +73,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'LFD 150',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Lily.jpg'
         },
 
         {
@@ -74,7 +82,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'COLLIE SMOOTH',
             kennel_number: 'INJD 007',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Zuzu.jpg'
         },
 
         {
@@ -82,7 +91,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'AD 082',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Coco.jpg'
         },
 
         {
@@ -90,7 +100,8 @@ module.exports = {
             pet_type: 'CAT',
             pet_breed: 'DOMESTIC SH',
             kennel_number: 'LFC 025',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Roxy.jpg'
         },
 
         {
@@ -98,7 +109,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'ANATOL SHEPHERD',
             kennel_number: 'LFD 068',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Gracie.jpg'
         },
 
         {
@@ -106,7 +118,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 014',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Penny.jpg'
         },
 
         {
@@ -114,7 +127,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'LABRADOR RETR',
             kennel_number: 'INJD 024',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Zoey.jpg'
         },
 
         {
@@ -122,7 +136,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'PSD 44',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Bailey.jpg'
         },
 
         {
@@ -130,15 +145,17 @@ module.exports = {
             pet_type: 'CAT',
             pet_breed: 'DOMESTIC SH',
             kennel_number: 'LFC 009',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Mia.jpg'
         },
 
         {
-            pet_name: 'Dexter',
+            pet_name: 'Draxler',
             pet_type: 'DOG',
             pet_breed: 'LABRADOR RETR',
             kennel_number: 'NMOMS 4',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Draxler.jpg'
         },
 
         {
@@ -146,7 +163,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'ANATOL SHEPHERD',
             kennel_number: 'LFD 068',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Riley.jpg'
         },
 
         {
@@ -154,7 +172,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 020',
-            kennel_status: 'IMPOUNDED'
+            kennel_status: 'IMPOUNDED',
+            pet_image: '/images/Dexter.jpg'
         },
 
         {
@@ -162,7 +181,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'AD 078',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Moose.jpg'
         },
 
         {
@@ -170,7 +190,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'PSD 11',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Hank.jpg'
         },
 
         {
@@ -178,7 +199,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'AD 080',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Loki.jpg'
         },
 
         {
@@ -186,7 +208,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 148',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Bruno.jpg'
         },
 
         {
@@ -194,7 +217,8 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'AD 021',
-            kennel_status: 'AVAILABLE'
+            kennel_status: 'AVAILABLE',
+            pet_image: '/images/Centurion.jpg'
         },
         ], {});
     },

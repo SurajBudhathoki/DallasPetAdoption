@@ -12,21 +12,17 @@ const findPets = function() {
 
 const renderPets = function(outputElement, data) {
 
-   
-
-    
-
-    
+    console.log(data);
 
     for(let i = 0; i < data.length; i++) {
 
         const output =  $(outputElement);
      
+        
         const listItems =  $("<li class='list-group-item mt-4 pet' >");
         listItems.append(
+            imageHolder = $(`<img src = "${data[i].pet_image}">`),
             $("<h3 id ='name'>").text(data[i].pet_name),
-            $('<p>').text('Type: ' + data[i].pet_type),
-            $('<p>').text('Breed: ' + data[i].pet_breed),
             $('<p>').text('Kennel#: ' + data[i].kennel_number)
         )
        

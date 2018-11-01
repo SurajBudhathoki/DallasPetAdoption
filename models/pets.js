@@ -18,6 +18,9 @@ module.exports = function(sequelize, DataTypes) {
         },
         kennel_status: {
             type: DataTypes.STRING,
+        },
+        pet_image: {
+            type: DataTypes.STRING
         }
 
     });
