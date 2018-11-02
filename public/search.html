@@ -5,66 +5,80 @@
     <title>Browse</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   
+
 
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-        <div>
-                <nav class="navbar navbar-default navigation-clean-button">
-                    <div class="container">
-                        <div class="navbar-header"><a class="navbar-brand" href="/">DPA</a>
-                            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="navcol-1">
-                            <ul class="nav navbar-nav">
-                             
-                                <li><a href="/about">About</a></li>
-                                <li class = "active"><a href="/search">Browse</a></li>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="/contact">Contact</a></li>
-                            </ul>
-                            <p class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
-                                data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
-                                data-toggle="modal" data-target="#userModal">Sign Up</a></p>
-                        </div>
-                    </div>
-                </nav>
+    <!-- Header -->
+    <div class="header">
+        <nav class="navbar navbar-default navigation-clean-button">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand" href="/">DPA</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
+                            navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+
+                        <li><a href="/about">About</a></li>
+                        <li class="active"><a href="/search">Browse</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                    <p class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
+                            data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
+                            data-toggle="modal" data-target="#userModal">Sign Up</a></p>
+                </div>
             </div>
+        </nav>
+    </div>
 
-    <div class="container" id = "content"  >
 
-        <h3> Filter
+    <!-- Main Container -->
+    <div class="container" id="content">
 
-        <input id = "breed" type = "text"> 
-    </h3>
+        <h3 id="filter"> Filter
 
-        <div class="row form-group" >
+            <input id="breed" type="text">
+        </h3>
+
+        <div class="row form-group">
             <ul id="petContent">
-               
+
             </ul>
-            
-            
-           
-              
+
+
+
         </div>
 
 
+        <div class="jumbotron">
+            <div class="row" id="petInf">
 
-   
+                <div class="col-lg-6" id="petImage">
+
+                </div>
+                <div class="col-lg-6" id="petInfo">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
 
 
 
-</div>
 
-
- <!-- Info Modal-->
- <div class="modal fade" id="infoModal" role="dialog">
+    <!-- Info Modal-->
+    <div class="modal fade" id="infoModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -87,49 +101,49 @@
 
     <!-- User Modal -->
     <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content text-center">
-    
-                    <div class="modal-body text-center">
-                        <div role="tabpanel">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li  ><a href="#loginTab" aria-controls="loginTab" role="tab"
-                                        data-toggle="tab">Login</a>
-    
-                                </li>
-                                <li  class="active"><a href="#signupTab" aria-controls="signupTab" role="tab"
-                                        data-toggle="tab">Sign up</a>
-    
-                                </li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane " id="loginTab">
-    
-                                    <form class="form-inline">
-                                        <br>
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+
+                <div class="modal-body text-center">
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li><a href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">Login</a>
+
+                            </li>
+                            <li class="active"><a href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">Sign
+                                    up</a>
+
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane " id="loginTab">
+
+                                <form class="form-inline">
+                                    <br>
                                     <div class="form-group">
                                         <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm email"
                                             placeholder="Email" name="email">
                                     </div> <br><br>
                                     <div class="form-group">
-    
+
                                         <label class="sr-only" for="password">Password</label>
-                                        <input type="password" class="form-control input-sm pw" placeholder="Password" name="password">
+                                        <input type="password" class="form-control input-sm pw" placeholder="Password"
+                                            name="password">
                                     </div><br><br>
-    
-    
+
+
                                     <button type="submit" class="btn btn-info login ">Login</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                    </form>
-    
-                                </div>
-    
-                                <div role="tabpanel" class="tab-pane active" id="signupTab">
-    
-                                        <form class="form-inline">
-                                                <br>
+                                </form>
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane active" id="signupTab">
+
+                                <form class="form-inline">
+                                    <br>
                                     <div class="form-group">
                                         <label class="sr-only" for="fName">First Name</label><input type="text" class="form-control input-sm"
                                             placeholder="First Name" id="fName" name="fName">
@@ -143,33 +157,33 @@
                                             placeholder="Email" id="email" name="email">
                                     </div> <br><br>
                                     <div class="form-group">
-    
+
                                         <label class="sr-only" for="password">Password</label>
                                         <input type="password" class="form-control input-sm" placeholder="Password" id="password"
                                             name="password">
                                     </div><br><br>
-    
-    
-    
+
+
+
                                     <button type="submit" class="btn btn-info signup">Sign up</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                    </form>
-    
-                                </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
-    
                 </div>
+
             </div>
         </div>
-    
+    </div>
 
 
 
 
-  <!-- footer -->
-  <footer id="myFooter">
+
+    <!-- footer -->
+    <footer id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
@@ -197,13 +211,12 @@
                         <li><a href="/api/users"> API Users</a></li>
                     </ul>
                 </div>
-
             </div>
         </div>
         <div class="footer-copyright">
             <p>© 2018 </p>
         </div>
-    </footer>    
+    </footer>
 
 
 

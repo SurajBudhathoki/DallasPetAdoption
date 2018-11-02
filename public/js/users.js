@@ -91,7 +91,7 @@ const checkLogin = function (data) {
     if (eList.includes(email)) {
         
        // $('#log').text('Welcome back!');
-       // $('.login').on('click', "location.href ='/pet'");
+        $('.login').on('click', "location.href ='/about'");
     }
 
    

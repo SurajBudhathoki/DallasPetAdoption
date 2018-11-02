@@ -7,34 +7,29 @@ const findPets = function () {
         .then(function (data) {
 
             renderPets('#petContent', data);
-            petInfo(data);
            
-            // for (var {id: n} of data) {
-            //    return n 
-            // }
            
         });
 }
 
 
+//function to render all pets in the container
 const renderPets = function (outputElement, data) {
 
 
 
     for (let i = 0; i < data.length; i++){
 
-            //console.log(data[i].id);
-
+            
         const output = $(outputElement);
 
 
-        const listItems = $(`<li class='list-group-item mt-4 pet '  >`);
+        const listItems = $(`<li class='list-group-item mt-4 pet' data-id ='${data[i].id} '  >`);
 
 
         listItems.append(
-           imageHolder = $(`<a href = /pet/${data[i].id} id ='${data[i].id}'><img class= 'bob'  src = "${data[i].pet_image}"></a> `),
-           // $('<a>').text('click').attr('href','/pet'),
-            $('<option >').text(data[i].id).addClass('tom'),
+           imageHolder = $(`<a href = '/pet' data-id ='${data[i].id}'><img class= 'bob'  src = "${data[i].pet_image}"></a> `),
+         
             $("<br><h3>").text(data[i].pet_name),
             $('<p>').text( data[i].pet_breed),
             $(`<button class = 'petButton' data-id=${data[i].id}>`).text('More Info'),
@@ -46,50 +41,84 @@ const renderPets = function (outputElement, data) {
         output.append(listItems);
 
 
-        // petInfo=() => {
-        //     data.forEach(element => {
-        //         const ndata= element;
-        //         console.log('foreach loop' + ndata);
-        //         // return ndata;
-               
-        //     });
-    
-        function petInfo (){
-            $('#petInfo').html(
-                `<img src = "${data[i].pet_image}" height = "200px" data-id=${data[i].id}/>
-            <p>${data[i].id}</p> 
-             <p>${data[i].pet_breed}</p>
-             <p>${data[i].kennel_number}</p> 
-             <p>${data[i].kennel_status}</p> 
-            `)
-
-            $('#infoModal').modal('toggle');
-
-        }
-            // console.log(data[i]);
-            // for (const i = 0; i < data.length; i++)
-            // const id = $('option').val();
-            // console.log('hello');
-
-           
-            
-        
 
 
     }
 
 
 
-
-    $('.petButton').on('click', petInfo);
-
-
-
 }
 
 
+//function to target id's for each pet and display their info
+$("#petContent").on("click",".pet",function(event){
+    event.preventDefault();
+    let id = $(this).data("id");
+    console.log(id);
+    $.ajax({
+        url:"/api/pets/" + id,
+        method:"GET"
+    }).then(function(response){
+        console.log(response);
+        $("#petContent").hide();
+        $("#filter").hide();
+        renderPetInfo('#petInfo', response);
+        renderPetImage('#petImage', response);
+     
+    })
+})
 
 
+//function to display the pet information
+const renderPetInfo = function(outputElement, data) {
+
+    const output = $(outputElement);
+
+   
+    const listItems = $('<div>');
+
+    listItems.append(
+        $('<p>').text(data.pet_name),
+        $('<p>').text('Type: ' + data.pet_type),
+        $('<p>').text('Breed: ' + data.pet_breed),
+        $('<p>').text('Kennel#: ' + data.kennel_number)
+    )
+   
+    
+
+     const buttonDiv = $('<br><div>');   
+
+     buttonDiv.append(
+        $('<button>').text('Back').addClass('btn btn-danger back '), $('<button>').text('Adopt Now!').addClass('btn btn-success ')
+     );
+
+
+     output.append(listItems, buttonDiv);
+
+     $('.back').on('click', goBack);
+}
+
+
+//function to display pet images
+const renderPetImage = function(outputElement, data) {
+
+    const output  = $(outputElement);
+
+    const  imageHolder = $(`<img src = "${data.pet_image}">`);
+
+    output.append(imageHolder);
+}
+
+
+const goBack = function () {
+
+    // $('#petInf').empty();
+    // $('#filter').show();
+   // $('#petContent').show();
+   $('.back').attr('click', function(){
+        location.href =  "/search";
+   });
+}
 
 
 
