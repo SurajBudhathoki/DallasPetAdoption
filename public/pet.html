@@ -26,7 +26,9 @@
                                 <li role="presentation"><a href="#">Events</a></li>
                                 <li role="presentation"><a href="/contact">Contact</a></li>
                             </ul>
-                            <p class="navbar-text navbar-right actions"><a class="navbar-link login" href="#">Log In</a> <a class="btn btn-default action-button" role="button" href="#">Sign Up</a></p>
+                            <p class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
+                                data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
+                                data-toggle="modal" data-target="#userModal">Sign Up</a></p>
                         </div>
                     </div>
                 </nav>
@@ -49,42 +51,46 @@
                 </div>
                <a href="/search"> <button class="btn btn-primary"> Back to Browse</button> </a> 
         </div>
-    <footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="/"> DPA </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Get started</h5>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="/search">Browse</a></li>  
 
-                    </ul>
+
+    
+          <!-- footer -->
+    <footer id="myFooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h2 class="logo"><a href="/"> DPA </a></h2>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Get started</h5>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a data-toggle="modal" data-target="#userModal">Sign up</a></li>
+                            <li><a href="/search">Browse</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>About us</h5>
+                        <ul>
+                            <li><a href="/about">Information</a></li>
+                            <li><a href="/contact">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>API Links</h5>
+                        <ul>
+                            <li><a href="/api/pets"> API Pets</a></li>
+                            <li><a href="/api/users"> API Users</a></li>
+                        </ul>
+                    </div>
+    
                 </div>
-                <div class="col-sm-2">
-                    <h5>About us</h5>
-                    <ul>
-                        <li><a href="/about">Information</a></li>
-                        <li><a href="/contact">Contact us</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>API Links</h5>
-                    <ul>
-                        <li><a href="/api/pets"> API Pets</a></li>
-                        <li><a href="/api/users"> API Users</a></li>
-                    </ul>
-                </div>
-               
             </div>
-        </div>
-        <div class="footer-copyright">
-            <p>© 2018 </p>
-        </div>
-    </footer>
+            <div class="footer-copyright">
+                <p>© 2018 </p>
+            </div>
+        </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/pets.js"></script>

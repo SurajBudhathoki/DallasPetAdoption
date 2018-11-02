@@ -26,7 +26,9 @@
                                 <li role="presentation"><a href="#">Events</a></li>
                                 <li role="presentation"><a href="/contact">Contact</a></li>
                             </ul>
-                            <p class="navbar-text navbar-right actions"><a class="navbar-link login" href="#">Log In</a> <a class="btn btn-default action-button" role="button" href="#">Sign Up</a></p>
+                            <p class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
+                                data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
+                                data-toggle="modal" data-target="#userModal">Sign Up</a></p>
                         </div>
                     </div>
                 </nav>
@@ -36,47 +38,145 @@
     <div class="jumbotron">
             <h2> About us</h2>
 
-            <img id = "aboutImage" src="/images/aboutimage.jpg">
-            <p> Dallas Pet Adoption is a non-profit organization based in Dallas- Fort Worth, Texas which was launched in 2018.</p>
+            <div class="row">
+                <div class="col-lg-12">
+                        <img id = "aboutImage" src="/images/aboutimage.jpg">
+                </div>
+                   
+                    <p> Dallas Pet Adoption is a non-profit organization based in Dallas- Fort Worth, Texas which was launched in 2018.</p>
+            </div>
+            
     </div>
     
 </div>
-    <footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="/"> DPA </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Get started</h5>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="/search">Browse</a></li>  
 
-                    </ul>
+
+
+
+ <!-- User Modal -->
+ <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+
+                <div class="modal-body text-center">
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li  ><a href="#loginTab" aria-controls="loginTab" role="tab"
+                                    data-toggle="tab">Login</a>
+
+                            </li>
+                            <li  class="active"><a href="#signupTab" aria-controls="signupTab" role="tab"
+                                    data-toggle="tab">Sign up</a>
+
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane " id="loginTab">
+
+                                <form class="form-inline">
+                                    <br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm email"
+                                        placeholder="Email" name="email">
+                                </div> <br><br>
+                                <div class="form-group">
+
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input type="password" class="form-control input-sm pw" placeholder="Password" name="password">
+                                </div><br><br>
+
+
+                                <button type="submit" class="btn btn-info login ">Login</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </form>
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane active" id="signupTab">
+
+                                    <form class="form-inline">
+                                            <br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="fName">First Name</label><input type="text" class="form-control input-sm"
+                                        placeholder="First Name" id="fName" name="fName">
+                                </div> <br><br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="lName">Last Name</label><input type="text" class="form-control input-sm"
+                                        placeholder="Last Name" id="lName" name="lName">
+                                </div> <br><br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm"
+                                        placeholder="Email" id="email" name="email">
+                                </div> <br><br>
+                                <div class="form-group">
+
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input type="password" class="form-control input-sm" placeholder="Password" id="password"
+                                        name="password">
+                                </div><br><br>
+
+
+
+                                <button type="submit" class="btn btn-info signup">Sign up</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-2">
-                    <h5>About us</h5>
-                    <ul>
-                        <li><a href="/about">Information</a></li>
-                        <li><a href="/contact">Contact us</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>API Links</h5>
-                    <ul>
-                        <li><a href="/api/pets"> API Pets</a></li>
-                        <li><a href="/api/users"> API Users</a></li>
-                    </ul>
-                </div>
-               
+
             </div>
         </div>
-        <div class="footer-copyright">
-            <p>© 2018 </p>
-        </div>
-    </footer>
+    </div>
+
+
+
+
+
+
+
+     <!-- footer -->
+     <footer id="myFooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h2 class="logo"><a href="/"> DPA </a></h2>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Get started</h5>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a data-toggle="modal" data-target="#userModal">Sign up</a></li>
+                            <li><a href="/search">Browse</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>About us</h5>
+                        <ul>
+                            <li><a href="/about">Information</a></li>
+                            <li><a href="/contact">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>API Links</h5>
+                        <ul>
+                            <li><a href="/api/pets"> API Pets</a></li>
+                            <li><a href="/api/users"> API Users</a></li>
+                        </ul>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2018 </p>
+            </div>
+        </footer>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
