@@ -66,4 +66,13 @@ module.exports  = function (app) {
             res.json({error : error});
         });
     });
+
+    //POST request for users 
+    app.post('/api/users', function(req,res){
+        db.Users.create(req.body).then(function (rows) {
+            res.json({ success: true});
+        }).catch(function (error) {
+            res.json({ error: error})
+        })
+    });
 }

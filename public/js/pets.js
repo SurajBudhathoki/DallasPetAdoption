@@ -10,33 +10,83 @@ const findPets = function() {
     });
 }
 
+
 const renderPets = function(outputElement, data) {
 
-    console.log(data);
+
 
     for(let i = 0; i < data.length; i++) {
 
+     
+        
         const output =  $(outputElement);
      
         
-        const listItems =  $("<li class='list-group-item mt-4 pet' >");
+        const listItems =  $(`<li id =  ${data[i].id} class='list-group-item mt-4 pet'  >`);
+
+       
         listItems.append(
-            imageHolder = $(`<img src = "${data[i].pet_image}">`),
-            $("<h3 id ='name'>").text(data[i].pet_name),
-            $('<p>').text('Kennel#: ' + data[i].kennel_number)
+            imageHolder = $(`<a href = "/pet" class= 'bob' id ='bob'><img src = "${data[i].pet_image}"></a> `),
+
+            $("<br><h3>").text(data[i].pet_name),
+            $('<p>').text('Kennel#: ' + data[i].kennel_number),
+            $(`<button class = 'but'>`).text('More Info'),
+
+            
+            
         )
        
         output.append(listItems);
+
+
+       function petInfo(listItems) {
+
+
+        $('#petInfo').html(
+            `<img src = "${data[i].pet_image}" height = "200px"/>
+            <p>${data[i].pet_name}</p> 
+             <p>${data[i].pet_breed}</p>
+             <p>${data[i].kennel_number}</p> 
+             <p>${data[i].kennel_status}</p> 
+            `)
+
+        $('#infoModal').modal('toggle');
     }
+       
+
+    }
+
+    
+
+
+    //$('.bob').on('click', petInfo);
+       
+   $('.but').on('click', petInfo);
     
     
-          
-   
+
 }
+
+
+
+
+const getPetInfo = function(petId) {
+    $.get(`api/pets/${petId}`, function(data) {
+        
+        console.log(data);
+    })
+
+}
+
+
+
 
 findPets();
 
 
+
+
+//filter function
 $('#breed').on('keyup', function() {
     let value = $(this).val().toLowerCase();
     $('#petContent li').filter(function() {
@@ -45,3 +95,8 @@ $('#breed').on('keyup', function() {
     })
 
 })
+
+
+
+
+

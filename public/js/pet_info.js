@@ -3,12 +3,16 @@
 
 const findPet = function () {
 
-    //const id = $().val();
+
+    const id = $('#bob').val();
+    console.log(id);
 
     $.ajax({ url: `/api/pets/1`, method: 'GET' }).then(function (data) {
-
+            
         renderPetInfo('#petInfo', data);
         renderPetImage('#petImage', data);
+
+      
     });
 }
 
@@ -17,7 +21,7 @@ const renderPetInfo = function(outputElement, data) {
     const output = $(outputElement);
 
    
-
+  console.log(data);
     const listItems = $('<div>');
 
     listItems.append(
@@ -49,4 +53,7 @@ const renderPetImage = function(outputElement, data) {
     output.append(imageHolder);
 }
 
-findPet();
+//findPet();
+
+
+//$('.but').on('click', findPet);

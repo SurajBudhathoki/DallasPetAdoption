@@ -23,14 +23,14 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav">
 
-                        <li role="presentation"><a href="/about">About</a></li>
-                        <li role="presentation"><a href="/search">Browse</a></li>
-                        <li role="presentation"><a href="#">Events</a></li>
-                        <li role="presentation"><a href="/contact">Contact</a></li>
+                        <li ><a href="/about">About</a></li>
+                        <li ><a href="/search">Browse</a></li>
+                        <li ><a href="#">Events</a></li>
+                        <li ><a href="/contact">Contact</a></li>
                     </ul>
                     <p class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
-                            data-target="#loginModal">Log In</a> <a class="btn btn-default action-button" role="button"
-                            data-toggle="modal" data-target="#loginModal">Sign Up</a></p>
+                            data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
+                            data-toggle="modal" data-target="#userModal">Sign Up</a></p>
                 </div>
             </div>
         </nav>
@@ -39,20 +39,21 @@
 
 
 
-
+    <!-- Image container-->
     <div class="container">
 
-        <section class="jumbotron text-center containerMain">
-          
-                <!-- <h1 class="jumbotron-heading">Image</h1> -->
-                <p class="lead text-muted">Find a pet now!</p>
+        <section class="jumbotron jumbotron-fluid text-center containerMain">
+
+            <div id="text">
+                <h1>Find a pet now!</h1>
                 <p>
                     <a href="/search" class="btn btn-primary my-2">Click here</a>
                 </p>
-            
+            </div>
+
         </section>
     </div>
-    
+
 
     <div class="container">
         <!-- /#myCarousel -->
@@ -67,7 +68,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -79,7 +80,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -91,7 +92,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -103,7 +104,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -119,7 +120,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -131,7 +132,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -143,7 +144,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -155,7 +156,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -171,7 +172,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -183,7 +184,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -195,7 +196,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -207,7 +208,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>Praesent commodo</h4>
-                                    
+
                                     <a class="btn btn-mini" href="#">» Read More</a>
                                 </div>
                             </div>
@@ -217,61 +218,106 @@
             </div>
 
 
-            <nav>
+            <!-- <nav>
                 <ul class="control-box pager">
                     <li><a data-slide="prev" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
                     <li><a data-slide="next" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></li>
                 </ul>
-            </nav>
+            </nav> -->
             <!-- /.control-box -->
 
         </div><!-- /#myCarousel -->
     </div>
-  
-
-    
 
 
-    <!-- Modal -->
-    <div id="loginModal" class="modal fade" >
+
+
+
+
+    <!-- User Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content text-center">
-                <div class="modal-header">
-                
-                    <h4>Login</h4>
-                </div>
-                <div class="modal-body ">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm"
-                                placeholder="Email" id="email" name="email">
-                        </div> <br><br>
-                        <div class="form-group">
 
-                            <label class="sr-only" for="password">Password</label>
-                            <input type="password" class="form-control input-sm" placeholder="Password" id="password"
-                                name="password">
-                            </div><br><br> 
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember me
-                            </label>
+                <div class="modal-body text-center">
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li  ><a href="#loginTab" aria-controls="loginTab" role="tab"
+                                    data-toggle="tab">Login</a>
+
+                            </li>
+                            <li  class="active"><a href="#signupTab" aria-controls="signupTab" role="tab"
+                                    data-toggle="tab">Sign up</a>
+
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane " id="loginTab">
+
+                                <form class="form-inline">
+                                    <br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm email"
+                                        placeholder="Email" name="email">
+                                </div> <br><br>
+                                <div class="form-group">
+
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input type="password" class="form-control input-sm pw" placeholder="Password" name="password">
+                                </div><br><br>
+
+
+                                <button type="submit" class="btn btn-info login ">Login</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </form>
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane active" id="signupTab">
+
+                                    <form class="form-inline">
+                                            <br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="fName">First Name</label><input type="text" class="form-control input-sm"
+                                        placeholder="First Name" id="fName" name="fName">
+                                </div> <br><br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="lName">Last Name</label><input type="text" class="form-control input-sm"
+                                        placeholder="Last Name" id="lName" name="lName">
+                                </div> <br><br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm"
+                                        placeholder="Email" id="email" name="email">
+                                </div> <br><br>
+                                <div class="form-group">
+
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input type="password" class="form-control input-sm" placeholder="Password" id="password"
+                                        name="password">
+                                </div><br><br>
+
+
+
+                                <button type="submit" class="btn btn-info signup">Sign up</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </form>
+
+                            </div>
                         </div>
-
-                        <br><br>
-
-                        <button type="submit" class="btn btn-info ">Sign in</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-
-
-
-
-                    </form>
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
+
+
+
+
+
+
 
 
 
@@ -287,8 +333,8 @@
                     <h5>Get started</h5>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="/search">Browse</a></li>   
+                        <li><a data-toggle="modal" data-target="#userModal">Sign up</a></li>
+                        <li><a href="/search">Browse</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2">
@@ -316,6 +362,7 @@
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/users.js"></script>
 </body>
 
 </html>
