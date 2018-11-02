@@ -202,14 +202,10 @@ body{
 
 
 
-
-
 .pet {
    float: left;
-   margin: 10px;
+    margin: 10px; 
   
-  
- 
 }
 
 .pet > p {

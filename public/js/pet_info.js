@@ -4,11 +4,11 @@
 const findPet = function () {
 
 
-    const id = $('#bob').val();
+    const id = $(this).data("id");
     console.log(id);
 
-    $.ajax({ url: `/api/pets/1`, method: 'GET' }).then(function (data) {
-            
+    $.ajax({ url: `/api/pets/${id}`, method: 'GET' }).then(function (data) {
+            console.log(data);
         renderPetInfo('#petInfo', data);
         renderPetImage('#petImage', data);
 
@@ -53,7 +53,7 @@ const renderPetImage = function(outputElement, data) {
     output.append(imageHolder);
 }
 
-//findPet();
+findPet();
 
 
 //$('.but').on('click', findPet);

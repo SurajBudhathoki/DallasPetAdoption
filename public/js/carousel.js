@@ -23,7 +23,7 @@ const renderPetImage = function(data) {
 
        
         listItems.append(
-            imageHolder = $(`<a href = "/pet" class= 'bob' id ='bob'><img src = "${data[i].pet_image}"></a> `)
+            imageHolder = $(`<a href = "/search" class= 'bob' id ='bob'><img src = "${data[i].pet_image}"></a> `)
         )
        
         slide1.append(listItems);
@@ -36,7 +36,7 @@ const renderPetImage = function(data) {
 
        
         listItems.append(
-            imageHolder = $(`<a href = "/pet" class= 'bob' id ='bob'><img src = "${data[i].pet_image}"></a> `)
+            imageHolder = $(`<a href = "/search" class= 'bob' id ='bob'><img src = "${data[i].pet_image}"></a> `)
         )
        
         slide2.append(listItems);
@@ -50,7 +50,7 @@ const renderPetImage = function(data) {
 
        
         listItems.append(
-            imageHolder = $(`<a href = "/pet" class= 'bob' id ='bob'><img src = "${data[i].pet_image}"></a> `)
+            imageHolder = $(`<a href = "/search" class= 'bob' id ='bob'><img src = "${data[i].pet_image}"></a> `)
         )
        
         slide3.append(listItems);
