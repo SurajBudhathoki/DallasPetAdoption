@@ -69,6 +69,11 @@ const loginFunction = function (event) {
 
     })
 
+    const email = $('.email').val();
+    if(email === '') {
+        $('#log').text('Please enter email AND password!').css({ "color": "red", "font-size": "100%" });
+    }
+
 }
 
 
@@ -78,6 +83,8 @@ const checkLogin = function (data) {
     const email = $('.email').val();
 
     let eList = [];
+
+   
 
     for (let i = 0; i < data.length; i++) {
 
@@ -90,8 +97,14 @@ const checkLogin = function (data) {
 
     if (eList.includes(email)) {
         
-       // $('#log').text('Welcome back!');
-        $('.login').on('click', "location.href ='/about'");
+        $('#log').empty();
+ 
+        $('.loginButton').attr('click', function(){
+            location.href =  "/contact";
+       });
+    }
+    else {
+        $('#log').text('Wrong email/password');
     }
 
    
@@ -107,9 +120,10 @@ const checkLogin = function (data) {
 }
 
 
-$('.login').on('click', loginFunction);
+$('.loginButton').on('click', loginFunction);
 
 
+//clearing out fields
 $('.cancel').on('click', function(){
     $('.email').val('');
     $('.pw').val('');
@@ -120,4 +134,12 @@ $('.cancel').on('click', function(){
     $('#password').val('');
     $('#err').empty();
 
-})
+});
+
+
+// $('#navLogin').on('click', function(){
+//     $('#navLogin').addClass('active');
+//     $('#navSignup').removeClass('active');
+  
+// });
+

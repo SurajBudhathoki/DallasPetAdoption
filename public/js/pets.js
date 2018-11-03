@@ -28,11 +28,11 @@ const renderPets = function (outputElement, data) {
 
 
         listItems.append(
-           imageHolder = $(`<a href = '/pet' data-id ='${data[i].id}'><img class= 'bob'  src = "${data[i].pet_image}"></a> `),
+           imageHolder = $(`<a href = ''><img class= 'bob'  src = "${data[i].pet_image}"></a>`),
          
             $("<br><h3>").text(data[i].pet_name),
             $('<p>').text( data[i].pet_breed),
-            $(`<button class = 'petButton' data-id=${data[i].id}>`).text('More Info'),
+            //$(`<button class = 'petButton' data-id=${data[i].id}>`).text('More Info'),
 
 
 
@@ -138,7 +138,6 @@ $('#breed').on('keyup', function () {
     })
 
 })
-
 
 
 
