@@ -21,9 +21,10 @@
                         <div class="collapse navbar-collapse" id="navcol-1">
                             <ul class="nav navbar-nav">
                              
-                                <li role="presentation"><a href="/about">About</a></li>
-                                <li role="presentation"><a href="/search">Browse</a></li>
-                                <li role="presentation"><a href="/contact">Contact</a></li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/search">Browse</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="/contact">Contact</a></li>
                             </ul>
                             <p class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
                                 data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
@@ -35,63 +36,36 @@
 
 <div class="container" id = "content">
     <div class="jumbotron">
-            <h2> About us</h2>
+            <h2> Welcome!</h2>
+        <div class="row test">
+                <h3> Your Pets ShortList</h3>
 
-            <div class="row">
-                <div class="col-lg-12">
-                        <img id = "aboutImage" src="/images/aboutimage.jpg"> 
-                </div>
-                 
-                <div class="col-lg-12">
-                    <br><p> Dallas Pet Adoption is a non-profit organization based in Dallas- Fort Worth, Texas which was launched in 2018. Our organization main goal is to make sure the animals find suitable homes.  </p>
-
-                    <h3><b>Mission </b> </h3>
-
-                    <p> Our mission is to increase public awareness about the availability of high-quality adoptable pets and increase the overall effectiveness of pet adoption programs.</p>
-                    <p> Our website allows pet lovers search pets that best match their needs. There is various information available and users are encouraged to discover what services we offer. </p>
-                </div>
-
-                <div class="col-lg-12">
-                    <h3> <b> Core Values</b> </h3> <br>
-                    <ul > 
-                        <li style="display:inline; margin-right: 100px"> Respect </li>
-                        <li style="display: inline; margin-right: 100px"> Commitment</li>
-                        <li style="display: inline; margin-right: 100px"> Positivity</li>
-                        <li style="display: inline; margin-right: 100px">Honesty</li>
-                        <li style="display: inline; margin-right: 100px">Excellent Service</li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-12">
-                    <h3><b> FAQ </b></h3>
-
-                    <p>
-                        How do I search for a pet?
-                        <li> You can begin your search immediately by using the browse tab above which will route you to a list of all pets in our database. You will be able to choose the pets based on type or breed.</li>
-                    </p>
-
-                    <p>
-                        How often is the website updated?
-                        <li> The website is updated  at the end of the day everyday as we continue to add a list of pets daily.</li>
-                    </p>
-
-                    <p>
-                        Do i need to apply to Dallas Pet Adoption? 
-                        <li> No. Once you have made a request for more information, our reps will reach out with you to set up a quick meetup to determite whether it's a match.</li>
-                    </p>
-
-                    <p> 
-                        How long does it take to hear back?
-                        <li> Once a request is made, our reps reach out to you within 3-5 business days.</li>
-                    </p>
-
-                    <p>
-                        Where can i get more detailed information about a pet?
-                        <li> In order to receive more detailed information, click the contact tab and once we receive your message we can send you the detailed information.</li>
-                    </p>
-                </div>
-            </div>
+                <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Breed</th>
+                            <th scope="col">Kennel #</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td> hello</td>
+                            <td><button>Delete</button></td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+        </div>
             
+
+
     </div>
     
 </div>
@@ -225,6 +199,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/users.js"></script>
 </body>
 
 </html>

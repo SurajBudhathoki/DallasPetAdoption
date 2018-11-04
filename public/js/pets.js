@@ -8,7 +8,7 @@ const findPets = function () {
 
             renderPets('#petContent', data);
            
-           
+           $('#petJumbotron').hide();
         });
 }
 
@@ -52,6 +52,7 @@ const renderPets = function (outputElement, data) {
 
 //function to target id's for each pet and display their info
 $("#petContent").on("click",".pet",function(event){
+    $('#petJumbotron').show();
     event.preventDefault();
     let id = $(this).data("id");
     console.log(id);
@@ -89,7 +90,7 @@ const renderPetInfo = function(outputElement, data) {
      const buttonDiv = $('<br><div>');   
 
      buttonDiv.append(
-        $('<button>').text('Back').addClass('btn btn-danger back '), $('<button>').text('Adopt Now!').addClass('btn btn-success ')
+        $('<button>').text('Back').addClass('btn btn-danger back '), $('<button>').text('Adopt Now!').addClass('btn btnColor ')
      );
 
 

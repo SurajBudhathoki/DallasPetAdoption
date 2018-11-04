@@ -16,10 +16,10 @@ const renderPetImage = function(data) {
     const slide2 = $('#slide2');
     const slide3 = $('#slide3');
 
-    for(let i = 0; i < 4; i++) {
+    for(let i = 0; i < 5; i++) {
 
       
-        const listItems =  $(`<li class='list-group-item mt-4 pet'  >`);
+        const listItems =  $(`<li class=' pet'  >`);
 
        
         listItems.append(
@@ -29,10 +29,10 @@ const renderPetImage = function(data) {
         slide1.append(listItems);
     }
 
-    for(let i = 5; i < 9; i++) {
+    for(let i = 5; i < 10; i++) {
 
       
-        const listItems =  $(`<li class='list-group-item mt-4 pet'  >`);
+        const listItems =  $(`<li class=' pet'  >`);
 
        
         listItems.append(
@@ -43,10 +43,10 @@ const renderPetImage = function(data) {
     }
 
 
-    for(let i = 10; i < 14; i++) {
+    for(let i = 10; i < 15; i++) {
 
       
-        const listItems =  $(`<li class='list-group-item mt-4 pet'  >`);
+        const listItems =  $(`<li class='pet'  >`);
 
        
         listItems.append(

@@ -16,20 +16,19 @@
     <div class="header">
         <nav class="navbar navbar-default navigation-clean-button">
             <div class="container">
-                <div class="navbar-header"><a class="navbar-brand" href="/">DPA</a>
+                <div class="navbar-header"><a class="navbar-brand" href="/"><img id ="logo" src="/images/DPALogo.png"> </a>
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
                             navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav">
 
-                        <li><a href="/about">About</a></li>
+                        <li><a class="navLink" href="/about">About</a></li>
                         <li><a href="/search">Browse</a></li>
-                        <li><a href="#">Events</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
-                    <div class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
-                            data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
+                    <div class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal" id = "logLink"
+                            data-target="#userModal">Log In</a> <a id = 'btnCol' class="btn action-button btnColor" role="button"
                             data-toggle="modal" data-target="#userModal">Sign Up</a></div>
                 </div>
             </div>
@@ -46,9 +45,9 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs">
-                        <li id = "navLogin"><a href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">Login</a>
+                        <li id = "navLogin"><a href="#loginTab" class='tabColor' aria-controls="loginTab" role="tab" data-toggle="tab">Login</a>
                         </li>
-                        <li id = "navSignup" class="active" ><a href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">Sign
+                        <li id = "navSignup" class="active" ><a href="#signupTab" class='tabColor' aria-controls="signupTab" role="tab" data-toggle="tab">Sign
                                 up</a>
                         </li>
                     </ul>
@@ -72,7 +71,7 @@
                                 <div class="form-group" id= "log"> </div>
                                 <br>
 
-                                <button type="submit" class="btn btn-info loginButton ">Login</button>
+                                <button type="submit" class="btn btnColor loginButton ">Login</button>
                                 <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
                             </form>
 
@@ -103,7 +102,7 @@
                                 <div class="form-group" id= "err"> </div>
                                 <br>
 
-                                <button type="submit" class="btn btn-info signup">Sign up</button>
+                                <button type="submit" class="btn btnColor signup ">Sign up</button>
                                 <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
                             </form>
                         </div>
@@ -123,7 +122,7 @@
             <div id="text">
                 <h1>Find a pet now!</h1>
                 <p>
-                    <a href="/search" class="btn btn-primary my-2">Click here</a>
+                    <a href="/search" class="btn action-button btnColor" role="button">Click here</a>
                 </p>
             </div>
 
@@ -136,25 +135,25 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <ul id="slide1">
+                    <ul class = "ulSlide" id="slide1">
                     </ul>
                 </div>
 
                 <div class="item">
-                    <ul id="slide2">
+                    <ul class = "ulSlide" id="slide2">
                     </ul>
                 </div>
 
                 <div class="item">
-                    <ul id="slide3">
+                    <ul class = "ulSlide" id="slide3">
                     </ul>
                 </div>
 
             </div>
 
             <ul class="control-box pager">
-                <li><a data-slide="prev" href="#petCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
-                <li><a data-slide="next" href="#petCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></li>
+                <li><a data-slide="prev" href="#petCarousel" class=""><i class="glyphicon glyphicon-chevron-left left"></i></a></li>
+                <li><a data-slide="next" href="#petCarousel" class=""><i class="glyphicon glyphicon-chevron-right right"></i></li>
             </ul>
 
         </div>
@@ -172,7 +171,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h2 class="logo"><a href="/"> DPA </a></h2>
+                    <h2 class="logo"><a href="/"> <img  src="/images/footerLogo.png" height="120px" width="150px" > </a></h2>
                 </div>
                 <div class="col-sm-2">
                     <h5>Get started</h5>

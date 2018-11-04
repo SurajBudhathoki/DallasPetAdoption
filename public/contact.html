@@ -29,7 +29,7 @@
                     </ul>
                     <p class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
                             data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
-                            data-toggle="modal" data-target="#userModal">Sign Up</a></p>
+                            data-toggle="modal" data-target="#contactModal">Sign Up</a></p>
                 </div>
             </div>
         </nav>
@@ -42,7 +42,7 @@
 
             <h2>Contact Us</h2>
             <hr>
-            <form id="contact-form" method="" action="" role="form">
+            <form id="contact-form" method="" action="" role="form" data-target="#contactModal">
 
                 <div class="messages"></div>
 
@@ -89,7 +89,9 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-success btn-send" value="Send message">
+                            <input type="submit" class="btn btnColor btn-send" value="Send message">
+                            <a class="btn btn-default action-button" role="button"
+                            data-toggle="modal" data-target="#contactModal">Send Message</a>
                         </div>
                     </div>
 
@@ -99,6 +101,28 @@
 
         </div>
     </div>
+
+
+    <div class="modal fade" id="contactModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Thank you</h2>
+                </div>
+                <div class="modal-body">
+                    <h4> Thank you for reaching out. Our representatives will be reaching out to you shortly.</h4>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 
 

@@ -11,7 +11,8 @@
     margin-bottom:0;
   }
   
-  
+
+
   .navigation-clean-button .navbar-brand{
     font-weight:bold;
     color:inherit;
@@ -21,9 +22,26 @@
     color:#222;
   }
   
+  #logo {
+   
+   width: 50px;
+  }
+
+  .navbar-nav {
+      margin-top: 20px; 
+      color: #00a4ff;
+  }
+
+
+  
   .navigation-clean-button.navbar .navbar-nav > li > a{
     padding-left:18px;
     padding-right:18px;
+    
+  }
+
+  .navigation-clean-button.navbar .navbar-nav > li > a:hover{
+    color: #00a4ff;
   }
   
 
@@ -33,8 +51,8 @@
   }
   
 
-  .navigation-clean-button .action-button, .navigation-clean-button .action-button:active{
-    background:#56c6c6;
+  .navigation-clean-button .action-button, .btnColor, .navigation-clean-button .action-button:active{
+    
     border-radius:20px;
     color:#fff;
     box-shadow:none;
@@ -48,13 +66,28 @@
     background:#66d7d7;
   }
   
+  .btnColor, #btnCol {
+      background-color: #00a4ff;
+      color: white;
+  }
 
+.tabColor {
+    color: #00a4ff;
+}
 
+#logLink:hover {
+    color:#00a4ff;
+}
+
+.actions {
+    margin-top: 20px;
+}
 
 #myFooter {
     background-color: #3c3d41;
     color: white;
     padding-top: 10px;
+    
 }
 
 #myFooter .footer-copyright {
@@ -66,8 +99,12 @@
 
 #myFooter .row {
     margin-bottom: 40px;
+   
 }
 
+.ulSlide {
+    list-style-type: none;
+}
 
 #myFooter .footer-copyright p {
     margin: 10px;
@@ -101,9 +138,12 @@
 #myFooter a:hover,
 #myFooter a:focus {
     text-decoration: none;
-    color: white;
+    color: #00a4ff;
 }
 
+.left, .right {
+    color: #00a4ff;
+}
 
 @media screen and (max-width: 767px) {
     #myFooter {
@@ -236,4 +276,9 @@ button {
 
 #aboutImage {
    max-width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    /* padding: 30px; */
 }

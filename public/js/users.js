@@ -100,7 +100,10 @@ const checkLogin = function (data) {
         $('#log').empty();
  
         $('.loginButton').attr('click', function(){
-            location.href =  "/contact";
+            location.href =  "/user";
+            
+           
+           
        });
     }
     else {
@@ -111,7 +114,7 @@ const checkLogin = function (data) {
         
     
 
-    console.log(eList);
+    userRender();
 
 
     $('.email').val('');
@@ -143,3 +146,22 @@ $('.cancel').on('click', function(){
   
 // });
 
+
+const userRender = function () {
+
+    $('.test').text('buddy');
+    console.log("hello world!");
+    $.ajax({ url: `/api/users/1`, method: 'GET' })
+        .then(function (data) {
+
+            console.log(data);
+           
+           
+        });
+}
+
+
+
+$('.btn-send').on('click', function(){
+    $('#contactModal').toggle();
+})
