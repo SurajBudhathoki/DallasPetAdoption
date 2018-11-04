@@ -76,7 +76,7 @@ module.exports  = function (app) {
         })
     });
 
-
+    // GET specific users
     app.get('/api/users/:id', function (req, res) {
         db.Users.find({ where: { id: req.params.id } })
         .then(function (data)  {
@@ -85,4 +85,29 @@ module.exports  = function (app) {
             res.json({error : error});
         });
     });
+
+
+    //PUT request to update user
+    app.put('/api/users/:id', function (req, res) {
+        db.Users.update(
+            req.body,
+            { where: { id: req.params.id } }
+        ).then(function (response) {
+            res.json({ success: true });
+        }).catch(function (error) {
+            res.json({ error: error });
+        });
+    });
+
+
+
+        //DELETE request to delete user 
+        app.delete('/api/users/:id', function (req, res) {
+            db.Users.destroy({ where: { id: req.params.id } })
+            .then(function ()  {
+                res.json( {success: true});
+            }).catch(function(error) {
+                res.json({error : error});
+            });
+        });
 }

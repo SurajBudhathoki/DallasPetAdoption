@@ -60,6 +60,7 @@ const loginFunction = function (event) {
 
     event.preventDefault();
 
+   
 
     $.ajax({ url: `/api/users/`, method: 'GET' }).then(function (data) {
 
@@ -68,6 +69,12 @@ const loginFunction = function (event) {
 
 
     })
+
+
+
+
+
+
 
     const email = $('.email').val();
     if(email === '') {
@@ -91,19 +98,25 @@ const checkLogin = function (data) {
         eList.push(data[i].email);
 
     }
-
   
 
 
     if (eList.includes(email)) {
         
         $('#log').empty();
- 
+
+        
+        sessionStorage.userEmail = email;
+    
         $('.loginButton').attr('click', function(){
+           
             location.href =  "/user";
             
-           
-           
+            console.log(eList);
+            console.log(data);
+            
+            
+            
        });
     }
     else {
@@ -114,7 +127,7 @@ const checkLogin = function (data) {
         
     
 
-    userRender();
+    //userRender();
 
 
     $('.email').val('');
@@ -164,4 +177,45 @@ const userRender = function () {
 
 $('.btn-send').on('click', function(){
     $('#contactModal').toggle();
-})
+});
+
+
+
+
+
+
+//-------------------------------------------------------
+//---------------User Dashboard Page ---------------------
+
+
+// const newUserInfo = {
+//     first_name : data.first_name,
+//     last_name : data.last_name,
+//     email : data.email,
+//     password : data.password
+// }
+
+
+// const updateUser  = function() {
+
+//     $.ajax({ url: `/api/users/${id}`, method: 'PUT'}).then( function(data ) {
+
+//         if(data.success) {
+
+//             console.log('update successful');
+//         }
+//         else {
+//             console.log('Oops, error!');
+//         }
+//     })
+// }
+
+
+function doiT () {
+
+    
+    $('#test').append('Welcome ' +sessionStorage.userEmail);
+    console.log(sessionStorage.userEmail);
+}
+
+doiT();

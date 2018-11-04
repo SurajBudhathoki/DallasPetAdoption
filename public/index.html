@@ -57,11 +57,11 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane " id="loginTab">
 
-                            <form class="form-inline log" action="/pet">
+                            <form class="form-inline log"  >
                                 <br>
                                 <div class="form-group">
                                     <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm email"
-                                        placeholder="Email" name="email">
+                                        placeholder="Email" name="email" id="emailTest">
                                 </div> <br><br>
                                 <div class="form-group">
 
@@ -75,6 +75,12 @@
                                 <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
                             </form>
 
+
+                            <form action="/user" onsubmit=" doiT()">
+                                <p>Enter your name</p>
+                                <input id="tbName" type="text">
+                                <button type="submit" value="submit">Submit</button>
+                            </form>
                         </div>
 
                         <div role="tabpanel" class="tab-pane active" id="signupTab">
@@ -208,6 +214,11 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/users.js"></script>
     <script src="/js/carousel.js"></script>
+    <script>
+    function callme(){
+        var name = document.getElementById('tbName').value;
+        sessionStorage.setItem('userName', name);
+    }</script>
 </body>
 
 </html>
