@@ -21,12 +21,17 @@ module.exports = function(sequelize, DataTypes) {
         },
         pet_image: {
             type: DataTypes.STRING
-        }
+        },
 
     });
 
     Pets.associate = function(models) {
-
+        Pets.belongsToMany(models.Users, {
+            through: 'userPets',
+            foreignKey: 'petId',
+            onDelete: 'cascade'
+    
+        })
     };
 
     return Pets;

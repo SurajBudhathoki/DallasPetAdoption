@@ -60,15 +60,15 @@
                             <form class="form-inline log"  >
                                 <br>
                                 <div class="form-group">
-                                    <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm email"
-                                        placeholder="Email" name="email" id="emailTest">
+                                    <label class="sr-only" for="username">Usename</label><input type="text" class="form-control input-sm userName"
+                                        placeholder="Username" name="username" id="emailTest">
                                 </div> <br><br>
                                 <div class="form-group">
 
                                     <label class="sr-only" for="password">Password</label>
                                     <input type="password" class="form-control input-sm pw" placeholder="Password" name="password">
                                 </div><br><br>
-                                <div class="form-group" id= "log"> </div>
+                                <div class="form-group" id= "loginErr"> </div>
                                 <br>
 
                                 <button type="submit" class="btn btnColor loginButton ">Login</button>
@@ -76,11 +76,6 @@
                             </form>
 
 
-                            <form action="/user" onsubmit=" doiT()">
-                                <p>Enter your name</p>
-                                <input id="tbName" type="text">
-                                <button type="submit" value="submit">Submit</button>
-                            </form>
                         </div>
 
                         <div role="tabpanel" class="tab-pane active" id="signupTab">
@@ -98,6 +93,10 @@
                                 <div class="form-group">
                                     <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm"
                                         placeholder="Email" id="email" name="email">
+                                </div> <br><br>
+                                <div class="form-group">
+                                    <label class="sr-only" for="userame">First Name</label><input type="text" class="form-control input-sm"
+                                        placeholder="Username" id="username" name="username">
                                 </div> <br><br>
                                 <div class="form-group">
 
@@ -167,7 +166,34 @@
     </div>
 
 
-
+ <!-- Admin Modal-->
+    <div class="modal fade" id="adminModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content  text-center">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Admin Login</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-inline">
+                                <div class="form-group">
+                                        <label class="sr-only" for="adminName">Usename</label><input type="text" class="form-control input-sm adminName"
+                                            placeholder="Username" name="adminName" >
+                                    </div> <br><br>
+                                    <div class="form-group">
+    
+                                        <label class="sr-only" for="adminPW">Password</label>
+                                        <input type="password" class="form-control input-sm adminPW" placeholder="Password" name="adminPW">
+                                    </div><br><br>
+                                    
+                                            <button type="submit" class="btn btnColor adminSubmit">Login</button>
+                                            <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                                   
+                        </form>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
 
 
 
@@ -201,7 +227,13 @@
                         <li><a href="/api/users"> API Users</a></li>
                     </ul>
                 </div>
-
+                <div class="col-sm-2">
+                        <h5>Employee Links</h5>
+                        <ul>
+                            <li><a data-toggle="modal" data-target="#adminModal"> Admin Login</a></li>
+                            <!-- <li><a href="/api/users"> API Users</a></li> -->
+                        </ul>
+                    </div>
             </div>
         </div>
         <div class="footer-copyright">
@@ -214,11 +246,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/users.js"></script>
     <script src="/js/carousel.js"></script>
-    <script>
-    function callme(){
-        var name = document.getElementById('tbName').value;
-        sessionStorage.setItem('userName', name);
-    }</script>
+
 </body>
 
 </html>

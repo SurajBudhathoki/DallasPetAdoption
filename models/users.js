@@ -12,15 +12,25 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+
 
     });
 
     Users.associate = function(models) {
-
+        Users.belongsToMany(models.Pets, {
+            through: 'userPets',
+            foreignKey:  'userId',
+            onDelete: 'cascade'
+            
+        });
     };
 
     return Users;

@@ -55,7 +55,7 @@ $("#petContent").on("click",".pet",function(event){
     $('#petJumbotron').show();
     event.preventDefault();
     let id = $(this).data("id");
-    console.log(id);
+    
     $.ajax({
         url:"/api/pets/" + id,
         method:"GET"
@@ -90,13 +90,15 @@ const renderPetInfo = function(outputElement, data) {
      const buttonDiv = $('<br><div>');   
 
      buttonDiv.append(
-        $('<button>').text('Back').addClass('btn btn-danger back '), $('<button>').text('Adopt Now!').addClass('btn btnColor ')
+        $('<button>').text('Back').addClass('btn btn-danger back '), $('<button>').text('Request more info').addClass('btn btnColor btnRequest')
      );
 
 
      output.append(listItems, buttonDiv);
 
      $('.back').on('click', goBack);
+
+     $('.btnRequest').on('click', requestInfo);
 }
 
 
@@ -141,5 +143,11 @@ $('#breed').on('keyup', function () {
 })
 
 
+
+const requestInfo = function() {
+
+    location.href = '/contact';
+    
+}
 
 

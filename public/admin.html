@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+
+
+    <div class="container">
+        <div class="jumbotron">
+                <div class="row">
+                        <h2> Welcome back!</h2>
+                </div>
+
+                <div class="row">
+                    <h4> Add new pet </h4>
+                    <button id = "petAdd">  Add </button>
+
+                    <div class="col addPet">
+                        <form class="form-inline">
+                            
+                            <div class="form-group">
+                                    <label>Pet Name</label> <input type="text" class="form-control input-sm newName" name = "newName"> 
+                                </div> <br><br>
+                                <div class="form-group">
+                                        <label>Type</label><input type="text" class="form-control input-sm newType">
+                                </div> <br><br>
+                                <div class="form-group">
+                                        <label>Breed</label> <input type="text" class="form-control input-sm newBreed">
+                                </div> <br><br>
+                                <div class="form-group">
+                                        <label>Kennel# </label><input type="text" class="form-control input-sm newKennel">
+                                </div> <br><br>
+                                <div class="form-group">
+                                        <label> Status</label><input type="text" class="form-control input-sm newStatus">
+                                </div> <br><br>
+                                
+                                        <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
+                                        <button type="button" class="btn btn-default cancel" >Cancel</button>
+                               
+                    </form>
+                    </div>
+                </div>
+                <div class="row" >
+                    <h4> Edit existing pet: </h4>
+                </div> <br>
+                <div class="form-group">
+
+                        <select class="custom-select" id = "adminContent">
+                            
+                        </select> <br> <br>
+                        <button class="btn btn-success" id="petSubmit"> Select </button>
+                    </div>
+
+                    <div class=" row" id="thisPetInfo">
+
+                    </div>
+
+        </div>
+       
+
+    </div>
+
+
+
+     <!-- scripts -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="/js/users.js"></script>
+</body>
+</html>
