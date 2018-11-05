@@ -4,34 +4,36 @@ const db = require('../models');
 
 //Routing
 
-module.exports  = function (app) {
+module.exports = function (app) {
+
+   
 
     //GET request for pets
-    app.get('/api/pets', function(req,res){
-        db.Pets.findAll({}).then(function (rows)  {
+    app.get('/api/pets', function (req, res) {
+        db.Pets.findAll({}).then(function (rows) {
             res.json(rows)
-        }).catch(function(error) {
-            res.json({error : error});
+        }).catch(function (error) {
+            res.json({ error: error });
         });
     });
 
     //POST request for pets
-    app.post('/api/pets', function(req,res){
+    app.post('/api/pets', function (req, res) {
         db.Pets.create(req.body).then(function (rows) {
-            res.json({ success: true});
+            res.json({ success: true });
         }).catch(function (error) {
-            res.json({ error: error})
+            res.json({ error: error })
         })
     });
 
-    //GET request for specified pet
+    //GET request for specified pet`
     app.get('/api/pets/:id', function (req, res) {
         db.Pets.find({ where: { id: req.params.id } })
-        .then(function (data)  {
-            res.json(data)
-        }).catch(function(error) {
-            res.json({error : error});
-        });
+            .then(function (data) {
+                res.json(data)
+            }).catch(function (error) {
+                res.json({ error: error });
+            });
     });
 
     //PUT request
@@ -49,41 +51,44 @@ module.exports  = function (app) {
     //DELETE request
     app.delete('/api/pets/:id', function (req, res) {
         db.Pets.destroy({ where: { id: req.params.id } })
-        .then(function ()  {
-            res.json( {success: true});
-        }).catch(function(error) {
-            res.json({error : error});
-        });
+            .then(function () {
+                res.json({ success: true });
+            }).catch(function (error) {
+                res.json({ error: error });
+            });
     });
 
 
 
-     //GET request for users
-     app.get('/api/users', function(req,res){
-        db.Users.findAll({}).then(function (rows)  {
+    //GET request for users
+    app.get('/api/users', function (req, res) {
+        db.User.findAll({}).then(function (rows) {
             res.json(rows)
-        }).catch(function(error) {
-            res.json({error : error});
+        }).catch(function (error) {
+            res.json({ error: error });
         });
     });
 
     //POST request for users 
-    app.post('/api/users', function(req,res){
-        db.Users.create(req.body).then(function (rows) {
-            res.json({ success: true});
+    app.post('/api/users', function (req, res) {
+        db.User.create(req.body).then(function (rows) {
+            res.json({ success: true });
         }).catch(function (error) {
-            res.json({ error: error})
+            res.json({ error: error })
         })
     });
+
+
+   
 
     // GET specific users
     app.get('/api/users/:id', function (req, res) {
         db.Users.find({ where: { id: req.params.id } })
-        .then(function (data)  {
-            res.json(data)
-        }).catch(function(error) {
-            res.json({error : error});
-        });
+            .then(function (data) {
+                res.json(data)
+            }).catch(function (error) {
+                res.json({ error: error });
+            });
     });
 
 
@@ -101,31 +106,33 @@ module.exports  = function (app) {
 
 
 
-        //DELETE request to delete user 
-        app.delete('/api/users/:id', function (req, res) {
-            db.Users.destroy({ where: { id: req.params.id } })
-            .then(function ()  {
-                res.json( {success: true});
-            }).catch(function(error) {
-                res.json({error : error});
+    //DELETE request to delete user 
+    app.delete('/api/users/:id', function (req, res) {
+        db.Users.destroy({ where: { id: req.params.id } })
+            .then(function () {
+                res.json({ success: true });
+            }).catch(function (error) {
+                res.json({ error: error });
             });
+    });
+
+
+    //trying to get pets belonging to users
+    app.get('/api/userPets', function (req, res) {
+        db.Users.findAll({
+            include: [
+                db.Pets
+            ]
+
+
+        }).then(function (userPets) {
+            res.json(userPets)
+        }).catch(function (error) {
+            res.json({ error: error });
         });
 
-
-        //trying to get pets belonging to users
-        app.get('/api/userPets', function(req,res){
-            db.Users.findAll({
-                include: [
-                    db.Pets
-                    ]
+    });
 
 
-            }).then(function (userPets)  {
-                res.json(userPets)
-            }).catch(function(error) {
-                res.json({error : error});
-            });
-
-        })
 
 }

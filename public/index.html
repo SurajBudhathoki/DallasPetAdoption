@@ -26,6 +26,8 @@
                         <li><a class="navLink" href="/about">About</a></li>
                         <li><a class="navLink" href="/search">Browse</a></li>
                         <li><a class="navLink" href="/contact">Contact</a></li>
+                        <li><a class="navLink" href="/signin"> Sign In</a></li>
+
                     </ul>
                     <div class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal" id = "logLink"
                             data-target="#userModal">Log In</a> <a id = 'btnCol' class="btn btn-primary action-button " role="button"
@@ -61,12 +63,12 @@
                                 <br>
                                 <div class="form-group">
                                     <label class="sr-only" for="username">Usename</label><input type="text" class="form-control input-sm userName"
-                                        placeholder="Username" name="username" id="emailTest">
+                                        placeholder="Username" name="myname" id="emailTest">
                                 </div> <br><br>
                                 <div class="form-group">
 
                                     <label class="sr-only" for="password">Password</label>
-                                    <input type="password" class="form-control input-sm pw" placeholder="Password" name="password">
+                                    <input type="password" class="form-control input-sm pw" placeholder="Password" name="mypassword">
                                 </div><br><br>
                                 <div class="form-group" id= "loginErr"> </div>
                                 <br>
@@ -184,7 +186,8 @@
                                         <label class="sr-only" for="adminPW">Password</label>
                                         <input type="password" class="form-control input-sm adminPW" placeholder="Password" name="adminPW">
                                     </div><br><br>
-                                    
+                                    <div class="form-group" id= "adminErr"> </div>
+                                    <br>
                                             <button type="submit" class="btn btnColor adminSubmit">Login</button>
                                             <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
                                    

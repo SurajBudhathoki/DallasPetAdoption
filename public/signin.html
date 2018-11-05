@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+        <!-- Header -->
+        <div class="header">
+            <nav class="navbar navbar-default navigation-clean-button">
+                <div class="container">
+                    <div class="navbar-header"><a class="navbar-brand" href="/"><img id ="logo" src="/images/DPALogo.png"> </a>
+                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
+                                navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+    
+                            <li><a class="navLink" href="/about">About</a></li>
+                            <li><a class="navLink" href="/search">Browse</a></li>
+                            <li><a class="navLink" href="/contact">Contact</a></li>
+                            <li><a class="navLink" href="/signin"> Sign In</a></li>
+    
+                        </ul>
+                     
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="container">
+            <div class="jumbotron text-center">
+                <div class="header "> <h1>Sign In </h1></div> <hr>
+                    <form id="signin" name="signin" method="post" action="signin">
+
+                        
+                         <div class="form-group">
+                                <input  class="form-control"  name="email" type="email"  placeholder="Email Address" required/>
+                         </div>   
+                    
+                         <div class="form-group">    
+                            <input class="form-control" name="password" type="password" required placeholder="Password"/>
+                         </div> 
+                         <div class="form-group">
+                                <input class="btn btnColor action-button" type="submit" value="Sign In" />
+                                <input type="button" class="btn btn-danger action-button signinCancel" id ="cancel" value="Cancel"/> 
+                           
+                         </div>  
+                           
+                          </form>
+                          
+            </div>
+        </div>
+
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/js/users.js"></script>
+
+</body>
+</html>

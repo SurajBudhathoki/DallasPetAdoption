@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    const Users = sequelize.define('Users', {
+    const User = sequelize.define('User', {
         first_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -12,20 +12,27 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+        // username: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
         password: {
             type: DataTypes.STRING,
             allowNull: false
         },
-
+        // last_login: {
+        //     type: DataTypes.DATE
+        // },
+ 
+        // status: {
+        //     type: DataTypes.ENUM('active', 'inactive'),
+        //     defaultValue: 'active'
+        // }
 
     });
 
-    Users.associate = function(models) {
-        Users.belongsToMany(models.Pets, {
+    User.associate = function(models) {
+        User.belongsToMany(models.Pets, {
             through: 'userPets',
             foreignKey:  'userId',
             onDelete: 'cascade'
@@ -33,6 +40,6 @@ module.exports = function(sequelize, DataTypes) {
         });
     };
 
-    return Users;
+    return User;
 
 }

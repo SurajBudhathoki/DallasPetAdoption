@@ -70,6 +70,8 @@
     padding:10px 22px;
   }
   
+
+
   .btnColor, #btnCol {
       background-color: #00a4ff;
     
@@ -160,6 +162,11 @@
 }
 
 
+.aboutCol {
+  color: #00a4ff;
+}
+
+
 /* CSS used for positioning the footers at the bottom of the page. */
 
 
@@ -212,6 +219,16 @@ body{
     z-index: 2;
 }
 
+
+#cancel {
+  border-radius:20px;
+  color:#fff;
+  box-shadow:none;
+  border:none;
+  padding:10px;
+  width: 100px;
+  margin-left: 10px;
+}
 
 .containerMain {
     position: relative;
@@ -294,6 +311,7 @@ table, th, td {
 .pet {
     box-shadow: 7px 7px 5px lightgrey;
 }
+
 
 
 

@@ -31,7 +31,7 @@ $('.signup').on('click', function (event) {
 
                 console.log('data', data)
 
-                $('#userModal').append('Thank you for signing up!');
+                $('#err').text('Thank you for signing up!');
 
 
                 $('#fName').val('');
@@ -51,7 +51,7 @@ $('.signup').on('click', function (event) {
 
 })
 
-
+//generateHash(password)
 
 //logging in the user if they are in the database   
 
@@ -151,6 +151,7 @@ $('.cancel').on('click', function () {
     $('#email').val('');
     $('#password').val('');
     $('#err').empty();
+    $('#adminErr').empty();
 
 });
 
@@ -217,7 +218,7 @@ $('#backBrowse').on('click', function () {
 //     email : data.email,
 //     password : data.password
 // }
-
+ 
 
 // const updateUser  = function() {
 
@@ -234,35 +235,21 @@ $('#backBrowse').on('click', function () {
 // }
 
 
-function doiT() {
 
 
-
-
-    const logout = $('<button>').text('Logout').addClass('logout');
-
-    $('#welcomeUser').append(`Welcome  ${sessionStorage.userName}!`
-    );
-
-    $('#logout').append(logout);
 
 
     $('.logout').on('click', function () {
 
-        location.href = "/";
-        $('.actions').hide();
+        location.href = "/logout";
+       
 
     })
 
-    $('.actions').show();
 
-}
-
-
-
-//userRender();
-doiT();
-
+    $('#cancel').on('click', function () {
+        location.href = "/";
+    });
 
 
 
@@ -284,7 +271,8 @@ const adminLogin = function () {
 
     else {
 
-        alert("Wrong ID");
+        $('#adminErr').append('Access denied').css({ "color": "red", "font-size": "100%" });
+        //alert("Wrong ID");
     }
 }
 
