@@ -90,7 +90,7 @@ const renderPetInfo = function(outputElement, data) {
      const buttonDiv = $('<br><div>');   
 
      buttonDiv.append(
-        $('<button>').text('Back').addClass('btn btn-danger back '), $('<button>').text('Request more info').addClass('btn btnColor btnRequest')
+        $('<button>').text('Back').addClass('btn action-button btn-danger back '), $('<button>').text('Request more info').addClass('btn btnColor btnRequest')
      );
 
 

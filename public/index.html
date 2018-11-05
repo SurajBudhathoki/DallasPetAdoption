@@ -24,11 +24,11 @@
                     <ul class="nav navbar-nav">
 
                         <li><a class="navLink" href="/about">About</a></li>
-                        <li><a href="/search">Browse</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a class="navLink" href="/search">Browse</a></li>
+                        <li><a class="navLink" href="/contact">Contact</a></li>
                     </ul>
                     <div class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal" id = "logLink"
-                            data-target="#userModal">Log In</a> <a id = 'btnCol' class="btn action-button btnColor" role="button"
+                            data-target="#userModal">Log In</a> <a id = 'btnCol' class="btn btn-primary action-button " role="button"
                             data-toggle="modal" data-target="#userModal">Sign Up</a></div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                                 <br>
 
                                 <button type="submit" class="btn btnColor loginButton ">Login</button>
-                                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
                             </form>
 
 
@@ -108,7 +108,7 @@
                                 <br>
 
                                 <button type="submit" class="btn btnColor signup ">Sign up</button>
-                                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
                             </form>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
             <div id="text">
                 <h1>Find a pet now!</h1>
                 <p>
-                    <a href="/search" class="btn action-button btnColor" role="button">Click here</a>
+                    <a href="/search" class="btn action-button btnColor" id = 'clickity' role="button">Click here</a>
                 </p>
             </div>
 
@@ -186,7 +186,7 @@
                                     </div><br><br>
                                     
                                             <button type="submit" class="btn btnColor adminSubmit">Login</button>
-                                            <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
                                    
                         </form>
                     </div>
