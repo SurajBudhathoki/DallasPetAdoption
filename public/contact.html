@@ -51,18 +51,16 @@
                     <div class="row">
 
                         <div class="col-md-8 form-group">
-                            <label for="form_name">First Name*</label>
-                            <input id="form_name" type="text" name="name" class="form-control" required="required"
-                                data-error="Firstname is required.">
+                            <label for="form_name">First Name</label>
+                            <input id="form_name" type="text" name="name" class="form-control" >
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-8 form-group">
-                            <label for="form_lastname">Last Name*</label>
-                            <input id="form_lastname" type="text" name="surname" class="form-control" required="required"
-                                data-error="Lastname is required.">
+                            <label for="form_lastname">Last Name</label>
+                            <input id="form_lastname" type="text" name="surname" class="form-control" >
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -70,28 +68,26 @@
 
                     <div class="row">
 
-                        <div class="col-md-8 form-group">
+                        <div class="col-md-8 form-group" >
                             <label for="form_email">Email*</label>
                             <input id="form_email" type="email" name="email" class="form-control" required="required"
                                 data-error="Valid email is required.">
-                            <div class="help-block with-errors"></div>
+                            <div class="help-block with-errors" id = "emailDiv"></div>
                         </div>
                     </div>
 
 
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="form-group">
+                            <div class="form-group" >
                                 <label for="form_message">Message*</label>
                                 <textarea id="form_message" name="message" class="form-control" placeholder="Enter your message"
                                     rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                                <div class="help-block with-errors"></div>
+                                <div class="help-block with-errors" id = "messageDiv"></div>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" class="btn btnColor btn-send" value="Send message">
-                            <a class="btn btn-default action-button" role="button"
-                            data-toggle="modal" data-target="#contactModal">Send Message</a>
+                            <a class="btn btnColor action-button">Send Message</a>
                         </div>
                     </div>
 
@@ -109,7 +105,7 @@
                 <div class="modal-header">
                     <h2 class="modal-title">Thank you</h2>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body contact">
                     <h4> Thank you for reaching out. Our representatives will be reaching out to you shortly.</h4>
 
                 </div>
@@ -251,6 +247,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/users.js"></script>
   
 </body>
 

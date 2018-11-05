@@ -175,9 +175,29 @@ const userRender = function () {
 }
 
 
+//contact modal
 
-$('.btn-send').on('click', function () {
-    $('#contactModal').toggle();
+$('.action-button').on('click', function () {
+    
+    const email = $('#form_email').val();
+    const message = $('#form_message').val();
+
+    if (email !== '' &&  message !== '') {
+        $('#contactModal').modal('toggle');
+        $('#emailDiv').empty();
+        $('#messageDiv').empty();
+        $('#form_email').val('');
+        $('#form_message').val('');
+        $('#form_name').val('');
+        $('#form_lastname').val('');
+
+    }
+    else {
+        $('#emailDiv').append('Please enter email!').css({ "color": "red", "font-size": "100%" });
+        $('#messageDiv').append('Please enter message!').css({ "color": "red", "font-size": "100%" });
+
+    }
+    
 });
 
 
@@ -312,7 +332,7 @@ $('.newpetSubmit').on('click', function (event) {
     })
 
     
-    
+
 });
 
 
