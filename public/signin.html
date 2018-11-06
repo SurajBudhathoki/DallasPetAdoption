@@ -41,27 +41,29 @@
 
     <!-- Main Container -->
     <div class="container">
-        <div class="jumbotron text-center">
+        <div class="jumbotron text-center signJumbo">
             <div class="header ">
                 <h1>Sign In </h1>
             </div>
-            <hr>
+            <hr><br>
             <form id="signin" name="signin" method="post" action="signin">
 
 
                 <div class="form-group">
                     <input class="form-control" name="email" type="email" placeholder="Email Address" required />
-                </div>
+                </div> <br>
 
                 <div class="form-group">
                     <input class="form-control" name="password" type="password" required placeholder="Password" />
-                </div>
+                </div><br>
                 <div class="form-group">
                     <input class="btn btnColor action-button" type="submit" value="Sign In" />
                     <input type="button" class="btn btn-danger action-button signinCancel" id="cancel" value="Cancel" />
 
+                </div> <br>
+                <div class="form-group">
+                    Don't have an account? <a href = "/signup"> Sign Up</a>
                 </div>
-
             </form>
 
         </div>

@@ -81,12 +81,25 @@ const adminLogin = function () {
 
 $('.adminSubmit').on('click', adminLogin);
 
-
+$('.cancel').on('click', function() {
+    location.href = "/admin";
+})
 
 //adding new pet 
 $('.newpetSubmit').on('click', function (event) {
 
+    $('#thisPetInfo').show();
+    // $('.newName').val('');
+    // $('.newType').val('');
+    // $('.newBreed').val('');
+    // $('.newKennel').val('');
+    // $('.newStatus').val('');
+    $('#addError').empty();
+    
+
     event.preventDefault();
+
+   
 
     output = $('.addPet');
 
@@ -101,19 +114,27 @@ $('.newpetSubmit').on('click', function (event) {
 
     for (let key in newPet) {
         if (newPet[key] === '') {
-            alert('Please fill out all fields');
+            $('#addError').text('Please fill out all fields').css({ "color": "red", "font-size": "100%" });
             return;
         }
     }
 
 
-    console.log('add awau');
+   
 
     $.post('/api/pets', newPet, function (data) {
 
         if (data.success) {
 
-            console.log("data", data);
+            $('.newName').val('');
+            $('.newType').val('');
+            $('.newBreed').val('');
+            $('.newKennel').val('');
+            $('.newStatus').val('');
+            alert('Pet added successfully!');
+         
+           
+           
         }
 
         else {
@@ -122,7 +143,6 @@ $('.newpetSubmit').on('click', function (event) {
     })
 
     
-
 });
 
 
@@ -168,6 +188,7 @@ const createPetRow = function (pet) {
 }
 
 
+//finding info of the pet user selected
 const findOneProduct = function () {
 
     const id = $('#adminContent').val();
@@ -183,6 +204,8 @@ const findOneProduct = function () {
 
 }
 
+
+// deleting the pet from the database
 const deleteThisPet = function () {
 
     const id = $(this).attr('data-id');
@@ -197,28 +220,30 @@ const deleteThisPet = function () {
         $.ajax({ url: `/api/pets/${id}`, method: 'DELETE' }).then(function (data) {
 
             if (data.success) {
-                console.log('RIP in peperonises');
+                alert('Pet has been deleted');
             }
             else {
-                alert('error mi doggi');
+                alert('there was an error');
             }
         })
 
     }
 
     else {
-        console.log('that was close!');
+        console.log('Action cancelled.');
     }
 
 
 }
 
 
+
+//rendering pet info to the html
 const renderThisPetsInfo = function (data) {
 
-    const output = $("#thisPetInfo");
+    const output = $("#currentInfo");
 
-    const divBody = $('<li>').addClass('list-group-item mt-4').attr('id', data.id);;
+    const divBody = $('<li>').addClass('list-group-item mt-4').attr('id', data.id);
 
     divBody.append(
 
@@ -226,26 +251,26 @@ const renderThisPetsInfo = function (data) {
         $('<h3>').text('Type: ' + data.pet_type),
         $('<h3>').text('Breed: ' + data.pet_breed),
         $('<h3>').text('Kennel#: ' + data.kennel_number),
-        $('<h3>').text('Status: ' + data.kennel_status)
-
+        $('<h3>').text('Status: ' + data.kennel_status),
+        $('<button >')
+        .text('Edit')
+        .addClass('btn btnColor editme')
+        .attr('data-id', data.id),
+    $('<button>')
+        .text('Delete')
+        .addClass('btn btn-danger action-button deleteme')
+        .attr('data-id', data.id)
 
     )
 
 
-    const buttonsDiv = $('<div>').addClass('float-right');
+    // const buttonsDiv = $('<div>').addClass('float-right');
 
-    buttonsDiv.append(
-        $('<button >')
-            .text('Edit')
-            .addClass('btn btn-primary edit editme')
-            .attr('data-id', data.id),
-        $('<button>')
-            .text('Delete')
-            .addClass('btn btn-danger delete deleteme')
-            .attr('data-id', data.id)
-    );
+    // buttonsDiv.append(
+       
+    // );
 
-    output.append(divBody, buttonsDiv);
+    output.html(divBody);
 
     $('.editme').on('click', renderUpdateFields);
     $('.deleteme').on('click', deleteThisPet);
@@ -255,59 +280,66 @@ const renderThisPetsInfo = function (data) {
 
 const renderUpdateFields = function () {
 
-    const output = $("#thisPetInfo");
+    const output = $("#updateInfo");
 
     const id = $(this).attr('data-id');
     console.log(id);
 
+    const divBody = $('<li>').addClass('list-group-item mt-4');
 
     listItem = [
-        $('<h2>').text('Name: '),
+        $('<h6>').text('Name: '),
         $('<input>')
-            .addClass('form-control')
+            .addClass('form-control-md-4')
             .attr('type', 'text')
             .attr('id', `pet-name-${id}`),
-        $('<h2>').text('Type: '),
+        $('<h6>').text('Type: '),
         $('<input>')
-            .addClass('form-control')
+            .addClass('form-control-md-4')
             .attr('type', 'text')
             .attr('id', `pet-type-${id}`),
-        $('<h2>').text('Breed: '),
+        $('<h6>').text('Breed: '),
         $('<input>')
-            .addClass('form-control')
+            .addClass('form-control-md-4')
             .attr('type', 'text')
             .attr('id', `pet-breed-${id}`),
-        $('<h2>').text('Kennel #: '),
+        $('<h6>').text('Kennel #: '),
         $('<input>')
-            .addClass('form-control')
+            .addClass('form-control-md-4')
             .attr('type', 'text')
             .attr('id', `kennel-number-${id}`),
-        $('<h2>').text('Status: '),
+        $('<h6>').text('Status: '),
         $('<input>')
-            .addClass('form-control')
+            .addClass('form-control-md-4')
             .attr('type', 'text')
-            .attr('id', `kennel-status-${id}`),
+            .attr('id', `kennel-status-${id}`), $('<br>'),
         $('<button>')
             .text('Submit')
-            .addClass('btn btn-primary submit float-right')
+            .addClass('btn btnColor submit float-right')
             .attr('id', `submit-${id}`),
         $('<button>')
             .text('Cancel')
-            .addClass('btn cancel float-right')
-            .attr('id', `cancel-${id}`)
+            .addClass('btn btn-danger action-button cancel float-right')
+            .attr('id', `cancel-${id}`), $(`<br><br>`),
+          $('<div>').attr('id', 'updateError')  
     ];
 
-    output.append(listItem);
+    divBody.append(listItem);
+    output.html(divBody);
+  
 
     const old = $(`#${id}`).html();
 
     $(`#cancel-${id}`).on('click', function () {
-        console.log('cancel meee')
+
+        location.href = '/admin';
         $(`#${id}`).empty().append(old);
         $(`#edit-${id}`).off('click');
     });
 
     $(`#submit-${id}`).on('click', function () {
+        $('#updateError').empty();
+    
         petUpdates(id);
     });
 
@@ -324,14 +356,27 @@ function petUpdates(id) {
         kennel_status: $(`#kennel-status-${id}`).val().trim()
     }
 
+    for (let key in newPet) {
+        if (newPet[key] === '') {
+ 
+           $('#updateError').text('Plase fill all fields!').css({ "color": "red", "font-size": "100%" });
+            return;
+        }
+    }
+
     //making PUT request
 
     $.ajax({ url: `/api/pets/${id}`, method: 'PUT', data: newPet }).then(function (data) {
 
         if (data.success) {
-            console.log('it worked!!!');
+            $(`#pet-name-${id}`).val('');
+            $(`#pet-type-${id}`).val('');
+            $(`#pet-breed-${id}`).val('');
+            $(`#kennel-number-${id}`).val('');
+            $(`#kennel-status-${id}`).val('');
+            alert('Update Successful!');
         } else {
-            alert('noooooope');
+            alert('Error Occured, Try Again.');
         }
     })
 }

@@ -8,6 +8,7 @@
         <title>Admin Portal</title>
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -32,6 +33,7 @@
 
                                         <ul class="nav navbar-nav navbar-right">
                                                 <li class="active"> <a class="navLink" href="#"> Admin Portal</a> </li>
+
                                         </ul>
                                 </div>
                         </div>
@@ -42,53 +44,91 @@
         <div class="container">
                 <div class="jumbotron">
                         <div class="row">
-                                <h2> Welcome back!</h2>
+                                <div class="col-md-10">
+                                        <h2> Welcome back!</h2>
+                                </div>
+                                <button class="btn btn-danger action-button logout">Logout</button>
                         </div>
 
                         <div class="row">
-                                <h4> Add new pet </h4>
-                                <button id="petAdd"> Add </button>
+                                <h3> <b>Actions </b> </h3>
 
-                                <div class="col addPet">
+
+                                <button class="btn btnColor" type="button" data-toggle="collapse" data-target="#addPet"
+                                        aria-expanded="false" aria-controls="addPet">
+                                        Add a new pet
+                                </button>
+                                <button class="btn btnColor" type="button" data-toggle="collapse" data-target="#editPet"
+                                        aria-expanded="false" aria-controls="editPet">
+                                        Edit an existing pet
+                                </button>
+
+
+                        </div>
+                        <div class="collapse" id="addPet">
+
+
+
+                                <div class="col addPet"> <br><br>
                                         <form class="form-inline">
 
                                                 <div class="form-group">
-                                                        <label>Pet Name</label> <input type="text" class="form-control input-sm newName"
-                                                                name="newName">
+                                                        <label class="addingPet">Pet Name</label> <input type="text"
+                                                                class="form-control  newName" name="newName">
                                                 </div> <br><br>
                                                 <div class="form-group">
-                                                        <label>Type</label><input type="text" class="form-control input-sm newType">
+                                                        <label class="addingPet">Type</label>
+                                                        <input type="text" class="form-control  newType">
                                                 </div> <br><br>
                                                 <div class="form-group">
-                                                        <label>Breed</label> <input type="text" class="form-control input-sm newBreed">
+                                                        <label class="addingPet">Breed</label>
+                                                        <input type="text" class="form-control  newBreed">
                                                 </div> <br><br>
                                                 <div class="form-group">
-                                                        <label>Kennel# </label><input type="text" class="form-control input-sm newKennel">
+                                                        <label class="addingPet">Kennel# </label>
+                                                        <input type="text" class="form-control  newKennel">
                                                 </div> <br><br>
                                                 <div class="form-group">
-                                                        <label> Status</label><input type="text" class="form-control input-sm newStatus">
+                                                        <label class="addingPet"> Status</label>
+                                                        <input type="text" class="form-control  newStatus">
                                                 </div> <br><br>
+                                                <div class="form-group" id="addError">
+
+                                                </div><br><br>
 
                                                 <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
-                                                <button type="button" class="btn btn-default cancel">Cancel</button>
+                                                <button type="button" class="btn btn-danger  action-button cancel">Cancel</button>
 
                                         </form>
                                 </div>
                         </div>
-                        <div class="row">
-                                <h4> Edit existing pet: </h4>
+                        <div class="collapse" id="editPet">
+
+                                <div class="row">
+                                        <div class="col-lg-12">
+                                                <div class="form-group">
+                                                        <br><br>
+                                                        <select class="custom-select" id="adminContent">
+
+                                                        </select> <br> <br>
+                                                        <button class="btn btnColor" id="petSubmit"> Select </button>
+                                                        <button type="button" class="btn btn-danger  action-button cancel">Cancel</button>
+                                                </div>
+                                        </div>
+                                </div>
+
+
+                                <div class=" row" id="thisPetInfo">
+
+                                        <div class="col-md-6" id="currentInfo">
+
+                                        </div>
+                                        <div class="col-md-6 form-group" id="updateInfo">
+                                                
+                                        </div>
+                                      
+                                </div>
                         </div> <br>
-                        <div class="form-group">
-
-                                <select class="custom-select" id="adminContent">
-
-                                </select> <br> <br>
-                                <button class="btn btn-success" id="petSubmit"> Select </button>
-                        </div>
-
-                        <div class=" row" id="thisPetInfo">
-
-                        </div>
                 </div>
         </div>
 

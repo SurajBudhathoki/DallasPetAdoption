@@ -179,6 +179,7 @@
   background-color: #e8e8e8;
 }
 
+
 /* CSS used for positioning the footers at the bottom of the page. */
 
 
@@ -331,6 +332,13 @@ table, th, td {
 .coreValues {
   font-size: 20px;
 }
+
+
+
+
+
+
+
 
   /* Pulse */
 @-webkit-keyframes hvr-pulse {
@@ -546,4 +554,46 @@ table, th, td {
   -webkit-transform: translateY(5px);
   transform: translateY(5px);
   
+}
+
+
+
+
+
+#profilePic {
+  border-radius: 50%;
+  height:150px;
+  width: 150px;
+}
+
+.signJumbo {
+    
+  margin-top: 50px;
+ margin-left: 200px;
+ margin-right: 200px;
+ margin-bottom: 50px;
+}
+
+
+@media screen and (max-width: 800px) {
+
+ .signJumbo {
+   margin-right: 0px;
+   margin-left: 0px;
+
+}
+
+}
+
+.addingPet{
+  margin-right: 100px;
+ 
+}
+
+#newType {
+  margin-left: 90px;
+}
+
+.custom-select {
+  width: 300px;
 }
