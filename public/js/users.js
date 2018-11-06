@@ -33,6 +33,13 @@ $('.action-button').on('click', function () {
 //---------------User Page ---------------------
 //------------------------------------------------------
 
+
+//canceling out of signin page
+$('.signinCancel').on('click', function() {
+    location.href = "/";
+});
+
+
 //clicking to go back to the browse page
 $('#backBrowse').on('click', function () {
     location.href = '/search';
@@ -77,6 +84,7 @@ const requestPetInfo = function ()   {
     addToInquiries(id);
 }
 
+
 const addToInquiries = function(id) {
 
    
@@ -95,7 +103,7 @@ const addToInquiries = function(id) {
 
 };
 
-
+//adding user inquiries to the table
 const inquiriesToTable = function(data) {
 
     const d = new Date();
@@ -160,7 +168,6 @@ $('.refresh').on('click', function() {
 
 // cancelling the add request
 $('.cancelAdd').on('click', function () {
-    //$('#petAddForm').text('');
     location.href = "/admin";
 })
 
@@ -179,8 +186,6 @@ $('.newpetSubmit').on('click', function (event) {
 
 
     event.preventDefault();
-
-
 
     output = $('.addPet');
 
@@ -225,8 +230,6 @@ $('.newpetSubmit').on('click', function (event) {
 
 
 });
-
-
 
 
 

@@ -9,7 +9,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'CAROLINA DOG',
             kennel_number: 'LFD 009',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Lucy.jpg'
         },
 
@@ -18,7 +18,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'PCD 14',
-            kennel_status: 'UNAVAILABLE',
+            kennel_status: '"UNAVAILABLE"  }',
             pet_image: '/images/Luna.jpg'
         },
 
@@ -27,7 +27,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 093',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Bella.jpg'
         },
 
@@ -36,7 +36,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 004',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Lola.jpg'
         },
 
@@ -46,7 +46,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'LFD 107',
-            kennel_status: 'UNAVAILABLE',
+            kennel_status: '"UNAVAILABLE"  }',
             pet_image: '/images/Daisy.jpg'
         },
 
@@ -55,7 +55,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'LABRADOR RETR',
             kennel_number: 'NMOMS 4',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Boxer.jpg'
         },
 
@@ -82,7 +82,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'COLLIE SMOOTH',
             kennel_number: 'INJD 007',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Zuzu.jpg'
         },
 
@@ -100,7 +100,7 @@ module.exports = {
             pet_type: 'CAT',
             pet_breed: 'DOMESTIC SH',
             kennel_number: 'LFC 025',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Roxy.jpg'
         },
 
@@ -118,7 +118,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 014',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Penny.jpg'
         },
 
@@ -127,7 +127,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'LABRADOR RETR',
             kennel_number: 'INJD 024',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Zoey.jpg'
         },
 
@@ -136,7 +136,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'PIT BULL',
             kennel_number: 'PSD 44',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Bailey.jpg'
         },
 
@@ -145,7 +145,7 @@ module.exports = {
             pet_type: 'CAT',
             pet_breed: 'DOMESTIC SH',
             kennel_number: 'LFC 009',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Mia.jpg'
         },
 
@@ -154,7 +154,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'LABRADOR RETR',
             kennel_number: 'NMOMS 4',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Draxler.jpg'
         },
 
@@ -172,7 +172,7 @@ module.exports = {
             pet_type: 'DOG',
             pet_breed: 'GERMAN SHEPHERD',
             kennel_number: 'LFD 020',
-            kennel_status: 'IMPOUNDED',
+            kennel_status: '"AVAILABLE"  }',
             pet_image: '/images/Dexter.jpg'
         },
 
@@ -220,10 +220,253 @@ module.exports = {
             kennel_status: 'AVAILABLE',
             pet_image: '/images/Centurion.jpg'
         },
+
+
+
+
+
+        {
+            pet_name: "Jimmy",
+            pet_type: "DOG",
+            pet_breed: "ROTTWEILER",
+            kennel_number: "PAWS 06",
+            kennel_status: " AVAILABLE"
+        },
+
+        {
+            pet_name: "Lanus",
+            pet_type: "DOG",
+            pet_breed: "GERM SHEPHERD",
+            kennel_number: "LFD 078",
+            kennel_status: "AVAILABLE"
+        },
+     
+       
+      
+        {
+          
+            pet_name: "Ronnie",
+            pet_type: "CAT",
+            pet_breed: "DOMESTIC SH",
+            kennel_number : "AC 023",
+            kennel_status: "UNAVAILABLE"
+
+        },
+       
+        {
+            pet_name: "Chippy",
+            pet_type: "DOG",
+            pet_breed: " PIT BULL",
+            kennel_number: "INJD 010",
+            kennel_status : "AVAILABLE"  
+        },
+       
+        {
+            pet_name: "Messi",
+            pet_type: "DOG",
+            pet_breed: "COLLIE SMOOTH",
+            kennel_number : "LFD 071",
+            kennel_status: "AVAILABLE"
+        },
+       
+        {
+            pet_name: "Topher",
+            pet_type: "DOG",
+            pet_breed: "BASSET HOUND",
+            kennel_number : "PAWS 15",
+            kennel_status: "AVAILABLE"
+        },
+       
+        {
+            pet_name: "Leroy",
+            pet_type: "DOG",
+            pet_breed: " PIT BULL",
+            kennel_number: "AD 041",
+            kennel_status : "AVAILABLE"
+        },
+
+        {
+            pet_name: "Drako",
+            pet_type: "DOG",
+            pet_breed: "GERM SHEPHERD",
+            kennel_number: "LFD 113",
+            kennel_status : "AVAILABLE",
+        },
+       
+        {
+            pet_name: "Fefe",
+            pet_type: "DOG",
+            pet_breed: "GERM SHEPHERD",
+            kennel_number: "PAWS 04",
+            kennel_status : "AVAILABLE"
+        },    
+        
+        {
+            pet_name: "Vecino",
+            pet_type: "DOG",
+            pet_breed: " PIT BULL",
+            kennel_number: "PCD 24",
+            kennel_status : "AVAILABLE"
+        },
+       
+
+        {
+            pet_name: "Tommy",
+            pet_type: "DOG",
+            pet_breed: "ROTTWEILER",
+            kennel_number: "LCP 06",
+            kennel_status: " AVAILABLE"
+        },
+
+        {
+            pet_name: "Limerio",
+            pet_type: "DOG",
+            pet_breed: "GERM SHEPHERD",
+            kennel_number: "PAWS 078",
+            kennel_status: "AVAILABLE"
+        },
+     
+       
+      
+        {
+            pet_name: "Chica",
+            pet_type: "CAT",
+            pet_breed: "DOMESTIC SH",
+            kennel_number : "AC 023",
+            kennel_status: "AVAILABLE"
+
+        },
+       
+        {
+            pet_name: "Max",
+            pet_type: "DOG",
+            pet_breed: " PIT BULL",
+            kennel_number: "IND 010",
+            kennel_status : "AVAILABLE"  
+        },
+       
+        {
+            pet_name: "Ollie",
+            pet_type: "DOG",
+            pet_breed: "COLLIE SMOOTH",
+            kennel_number : "LFD 071",
+            kennel_status: "AVAILABLE"
+        },
+       
+        {
+            pet_name: "Popo",
+            pet_type: "DOG",
+            pet_breed: "BASSET HOUND",
+            kennel_number : "PAWS 15",
+            kennel_status: "AVAILABLE"
+        },
+       
+        {
+            pet_name: "Goku",
+            pet_type: "DOG",
+            pet_breed: " PIT BULL",
+            kennel_number: "AD 041",
+            kennel_status : "AVAILABLE"
+        },
+
+        {
+            pet_name: "Archie",
+            pet_type: "DOG",
+            pet_breed: "GERM SHEPHERD",
+            kennel_number: "LFD 113",
+            kennel_status : "AVAILABLE",
+        },
+       
+        {
+            pet_name: "Molly",
+            pet_type: "DOG",
+            pet_breed: "GERM SHEPHERD",
+            kennel_number: "PAWS 04",
+            kennel_status : "AVAILABLE"
+        },    
+        
+        {
+            pet_name: "Rosie",
+            pet_type: "DOG",
+            pet_breed: " PIT BULL",
+            kennel_number: "PCD 24",
+            kennel_status : "AVAILABLE"
+        },
+        {
+            pet_name: "Chappie",
+            pet_type: "CAT",
+            pet_breed: "DOMESTIC MH",
+            kennel_number: "LFC 005",
+            kennel_status: "AVAILABLE"
+        },
+        {
+            pet_name: "Flado",
+            pet_type: "BIRD",
+            pet_breed: "CHICKEN",
+            kennel_number: "PUPS 1",
+            kennel_status : "UNAVAILABLE"  
+        },
+        {
+            pet_name: "Teddy",
+            pet_type : "WILDLIFE",
+            pet_breed: "HAMSTER",
+            kennel_number: "HABITAT",
+            kennel_status: "AVAILABLE"
+        },
+        {
+            pet_name: "Cheryshiv",
+            pet_type: "CAT",
+            pet_breed: "RUSSIAN BLUE",
+            kennel_number : "AC 033",
+            kennel_status: "AVAILABLE"
+        },
+        {
+            pet_name: "Rocky",
+            pet_type : "DOG",
+            pet_breed: "BOXER",
+            kennel_number: "QD 04",
+            kennel_status: "AVAILABLE"
+        },
+        {
+            pet_name: "Bubba",
+            pet_type : "DOG",
+            pet_breed: "BULLMASTIFF",
+            kennel_number: "LFD 065",
+            kennel_status: "AVAILABLE"
+        },
+        {
+            pet_name: "Frankie",
+            pet_type : "DOG",
+            pet_breed: "LABRADOR RETR",
+            kennel_number: "LFSD 03",
+            kennel_status: "AVAILABLE"
+        },
+
+        {
+            pet_name: "Maggie",
+            pet_type : "DOG",
+            pet_breed: " PIT BULL",
+            kennel_number: "INJD 015",
+            kennel_status: "AVAILABLE"
+        },
+
+        {
+            pet_name: "Bailey",
+            pet_type : "DOG",
+            pet_breed: "LABRADOR RETR",
+            kennel_number: "AD 007",
+            kennel_status: "AVAILABLE"
+        } 
+        
+       
+    
+       
+
         ], {});
     },
     down: (queryInterface, Sequelize) => {
         return queryInterface.bulkDelete('Pets', null, {});
     }
 };
+
 

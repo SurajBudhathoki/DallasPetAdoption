@@ -1,5 +1,7 @@
 
   
+/* Styling the navigation bar */  
+
   .navigation-clean-button{
     background:#fff;
     padding-top:10px;
@@ -92,6 +94,10 @@
 .actions {
     margin-top: 20px;
 }
+
+
+
+/* Styling the footer */
 
 #myFooter {
     background-color: #3c3d41;
@@ -243,6 +249,9 @@ body{
   margin-left: 10px;
 }
 
+
+/* Styling the container */
+
 .containerMain {
     position: relative;
     background: black;
@@ -277,7 +286,7 @@ body{
 
 
 
-
+/* Styling the pet info section*/
 
 
 .pet {
@@ -318,7 +327,7 @@ button {
 
 table, th, td {
     border: 1px solid black;
-    /* padding: 30px; */
+
 }
 
 .pet {
@@ -331,13 +340,18 @@ table, th, td {
 
 .coreValues {
   font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navLink {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
 }
 
 
 
 
-
-
+/* Animations from hover.css
 
 
   /* Pulse */
@@ -453,8 +467,6 @@ table, th, td {
     color: #fff;
   }
   
- 
-
 
   /* Underline From Left */
 .navLink {
@@ -557,7 +569,7 @@ table, th, td {
 }
 
 
-
+/* Styling the user page */
 
 
 #profilePic {
@@ -580,9 +592,17 @@ table, th, td {
  .signJumbo {
    margin-right: 0px;
    margin-left: 0px;
+ }
+
+   .containerMain, .containerBox {
+      margin-top: 50px;     
+   }
+
 
 }
 
+#breed {
+  margin-left: 20px;
 }
 
 .addingPet{

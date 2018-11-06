@@ -15,9 +15,6 @@ module.exports = function (app, passport) {
         res.sendFile(path.join(__dirname, '../public/about.html'));
     });
 
-    // app.get('/user', function (req, res) {
-    //     res.sendFile(path.join(__dirname, '../public/user.html'));
-    // });
 
     app.get('/search', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/search.html'));

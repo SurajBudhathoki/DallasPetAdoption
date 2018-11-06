@@ -117,22 +117,6 @@ module.exports = function (app) {
     });
 
 
-    //trying to get pets belonging to users
-    app.get('/api/userPets', function (req, res) {
-        db.Users.findAll({
-            include: [
-                db.Pets
-            ]
-
-
-        }).then(function (userPets) {
-            res.json(userPets)
-        }).catch(function (error) {
-            res.json({ error: error });
-        });
-
-    });
-
 
 
 }
