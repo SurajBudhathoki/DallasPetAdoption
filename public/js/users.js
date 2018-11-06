@@ -1,183 +1,8 @@
-
-//signing up users and adding them in the database
-
-
-$('.signup').on('click', function (event) {
-
-    event.preventDefault();
-
-    const newUser = {
-        first_name: $('#fName').val().trim(),
-        last_name: $('#lName').val().trim(),
-        email: $('#email').val().trim(),
-        username: $('#username').val().trim(),
-        password: $('#password').val().trim()
-    };
-
-    for (let key in newUser) {
-        if (newUser[key] === '') {
-            $('#err').text('Please fill all fields!').css({ "color": "red", "font-size": "100%" });
-            return;
-        }
-    }
-
-    console.log(newUser);
-
-
-    $.post('/api/users', newUser,
-        function (data) {
-
-            if (data.success) {
-
-                console.log('data', data)
-
-                $('#err').text('Thank you for signing up!');
-
-
-                $('#fName').val('');
-                $('#lName').val('');
-                $('#email').val('');
-                $('#username').val('');
-                $('#password').val('');
-            }
-
-            else {
-
-                alert('sorry, try again!');
-            }
-        });
-
-
-
-})
-
-//generateHash(password)
-
-//logging in the user if they are in the database   
-
-
-
-
-const loginFunction = function (event) {
-
-    event.preventDefault();
-
-    userRender();
-
-    $.ajax({ url: `/api/users/`, method: 'GET' }).then(function (data) {
-
-
-        checkLogin(data);
-
-
-    })
-
-
-
-
-
-
-
-    // const email = $('.email').val();
-    // if(email === '') {
-    //     $('#log').text('Please enter email AND password!').css({ "color": "red", "font-size": "100%" });
-    // }
-
-}
-
-
-
-const checkLogin = function (data) {
-
-    const username = $('.userName').val();
-
-    let userList = [];
-
-
-
-    for (let i = 0; i < data.length; i++) {
-
-        userList.push(data[i].username);
-
-    }
-
-
-
-    if (userList.includes(username)) {
-
-        $('#loginErr').empty();
-
-
-        sessionStorage.userName = username;
-
-        $('.loginButton').attr('click', function () {
-
-            location.href = "/user";
-
-            console.log(userList);
-            console.log(data);
-
-
-
-        });
-    }
-    else {
-        $('#loginErr').text('Wrong username/password').css({ "color": "red", "font-size": "100%" });
-    }
-
-
-
-
-
-    //
-
-
-    $('.email').val('');
-    $('.pw').val('');
-    $('#loginErr').val('');
-}
-
-
-$('.loginButton').on('click', loginFunction);
-
-
-//clearing out fields
-$('.cancel').on('click', function () {
-    $('.email').val('');
-    $('.pw').val('');
-    $('#loginErr').empty();
-    $('#fName').val('');
-    $('#lName').val('');
-    $('#email').val('');
-    $('#password').val('');
-    $('#err').empty();
-    $('#adminErr').empty();
-
-});
-
-
-
-
-const userRender = function () {
-
-
-
-    let id = $(this).data("id");
-    console.log(id);
-
-    console.log("hello world!");
-    $.ajax({ url: `/api/users/1`, method: 'GET' })
-        .then(function (data) {
-
-            console.log(data);
-
-
-        });
-}
-
+//-------------------------------------------------------
+//---------------Contact Page ---------------------
+//------------------------------------------------------
 
 //contact modal
-
 $('.action-button').on('click', function () {
     
     const email = $('#form_email').val();
@@ -202,68 +27,47 @@ $('.action-button').on('click', function () {
 });
 
 
+
+
+//-------------------------------------------------------
+//---------------User Page ---------------------
+//------------------------------------------------------
+
+//clicking to go back to the browse page
 $('#backBrowse').on('click', function () {
     location.href = '/search';
 })
 
 
-
-//-------------------------------------------------------
-//---------------User Dashboard Page ---------------------
-
-
-// const newUserInfo = {
-//     first_name : data.first_name,
-//     last_name : data.last_name,
-//     email : data.email,
-//     password : data.password
-// }
- 
-
-// const updateUser  = function() {
-
-//     $.ajax({ url: `/api/users/${id}`, method: 'PUT'}).then( function(data ) {
-
-//         if(data.success) {
-
-//             console.log('update successful');
-//         }
-//         else {
-//             console.log('Oops, error!');
-//         }
-//     })
-// }
-
-
-
-
-
-
+//logging out the user
     $('.logout').on('click', function () {
 
         location.href = "/logout";
        
-
     })
 
 
-    $('#cancel').on('click', function () {
+//routing back to the homepage on clicking cancel
+$('#cancel').on('click', function () {
         location.href = "/";
     });
 
 
 
 
+//-------------------------------------------------------
+//---------------Admin Page ---------------------
+//------------------------------------------------------
+
 
 /// admin login 
-
 const adminLogin = function () {
 
 
     const adminName = $('.adminName').val();
     const adminPW = $('.adminPW').val();
 
-    if (adminName === "admin" && adminPW === "pass") {
+    if (adminName === "admin" && adminPW === "password") {
 
         location.href = "/admin";
 
@@ -272,7 +76,6 @@ const adminLogin = function () {
     else {
 
         $('#adminErr').append('Access denied').css({ "color": "red", "font-size": "100%" });
-        //alert("Wrong ID");
     }
 }
 
@@ -281,7 +84,6 @@ $('.adminSubmit').on('click', adminLogin);
 
 
 //adding new pet 
-
 $('.newpetSubmit').on('click', function (event) {
 
     event.preventDefault();

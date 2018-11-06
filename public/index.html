@@ -16,7 +16,8 @@
     <div class="header">
         <nav class="navbar navbar-default navigation-clean-button">
             <div class="container">
-                <div class="navbar-header"><a class="navbar-brand" href="/"><img id ="logo" src="/images/DPALogo.png"> </a>
+                <div class="navbar-header"><a class="navbar-brand" href="/"><img id="logo" class="logo" src="/images/DPALogo.png">
+                    </a>
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
                             navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
@@ -26,99 +27,23 @@
                         <li><a class="navLink" href="/about">About</a></li>
                         <li><a class="navLink" href="/search">Browse</a></li>
                         <li><a class="navLink" href="/contact">Contact</a></li>
-                        <li><a class="navLink" href="/signin"> Sign In</a></li>
+
 
                     </ul>
-                    <div class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal" id = "logLink"
-                            data-target="#userModal">Log In</a> <a id = 'btnCol' class="btn btn-primary action-button " role="button"
-                            data-toggle="modal" data-target="#userModal">Sign Up</a></div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> <a class="navLink" href="/signin"> Sign In</a> </li>
+                        <li> <a class="navLink" href="/signup"> Sign Up</a> </li>
+                    </ul>
                 </div>
+
+
             </div>
         </nav>
     </div>
 
 
-    <!-- User Modal -->
-    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body text-center">
 
-
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs">
-                        <li id = "navLogin"><a href="#loginTab" class='tabColor' aria-controls="loginTab" role="tab" data-toggle="tab">Login</a>
-                        </li>
-                        <li id = "navSignup" class="active" ><a href="#signupTab" class='tabColor' aria-controls="signupTab" role="tab" data-toggle="tab">Sign
-                                up</a>
-                        </li>
-                    </ul>
-
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane " id="loginTab">
-
-                            <form class="form-inline log"  >
-                                <br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="username">Usename</label><input type="text" class="form-control input-sm userName"
-                                        placeholder="Username" name="myname" id="emailTest">
-                                </div> <br><br>
-                                <div class="form-group">
-
-                                    <label class="sr-only" for="password">Password</label>
-                                    <input type="password" class="form-control input-sm pw" placeholder="Password" name="mypassword">
-                                </div><br><br>
-                                <div class="form-group" id= "loginErr"> </div>
-                                <br>
-
-                                <button type="submit" class="btn btnColor loginButton ">Login</button>
-                                <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
-                            </form>
-
-
-                        </div>
-
-                        <div role="tabpanel" class="tab-pane active" id="signupTab">
-
-                            <form class="form-inline">
-                                <br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="fName">First Name</label><input type="text" class="form-control input-sm"
-                                        placeholder="First Name" id="fName" name="fName">
-                                </div> <br><br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="lName">Last Name</label><input type="text" class="form-control input-sm"
-                                        placeholder="Last Name" id="lName" name="lName">
-                                </div> <br><br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm"
-                                        placeholder="Email" id="email" name="email">
-                                </div> <br><br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="userame">First Name</label><input type="text" class="form-control input-sm"
-                                        placeholder="Username" id="username" name="username">
-                                </div> <br><br>
-                                <div class="form-group">
-
-                                    <label class="sr-only" for="password">Password</label>
-                                    <input type="password" class="form-control input-sm" placeholder="Password" id="password"
-                                        name="password">
-                                </div><br><br>
-                                <div class="form-group" id= "err"> </div>
-                                <br>
-
-                                <button type="submit" class="btn btnColor signup ">Sign up</button>
-                                <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!-- Main container-->
@@ -129,7 +54,7 @@
             <div id="text">
                 <h1>Find a pet now!</h1>
                 <p>
-                    <a href="/search" class="btn action-button btnColor" id = 'clickity' role="button">Click here</a>
+                    <a href="/search" class="btn action-button btnColor" id='clickity' role="button">Click here</a>
                 </p>
             </div>
 
@@ -142,17 +67,17 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <ul class = "ulSlide" id="slide1">
+                    <ul class="ulSlide" id="slide1">
                     </ul>
                 </div>
 
                 <div class="item">
-                    <ul class = "ulSlide" id="slide2">
+                    <ul class="ulSlide" id="slide2">
                     </ul>
                 </div>
 
                 <div class="item">
-                    <ul class = "ulSlide" id="slide3">
+                    <ul class="ulSlide" id="slide3">
                     </ul>
                 </div>
 
@@ -168,35 +93,35 @@
     </div>
 
 
- <!-- Admin Modal-->
+    <!-- Admin Modal-->
     <div class="modal fade" id="adminModal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content  text-center">
-                    <div class="modal-header">
-                        <h2 class="modal-title">Admin Login</h2>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-inline">
-                                <div class="form-group">
-                                        <label class="sr-only" for="adminName">Usename</label><input type="text" class="form-control input-sm adminName"
-                                            placeholder="Username" name="adminName" >
-                                    </div> <br><br>
-                                    <div class="form-group">
-    
-                                        <label class="sr-only" for="adminPW">Password</label>
-                                        <input type="password" class="form-control input-sm adminPW" placeholder="Password" name="adminPW">
-                                    </div><br><br>
-                                    <div class="form-group" id= "adminErr"> </div>
-                                    <br>
-                                            <button type="submit" class="btn btnColor adminSubmit">Login</button>
-                                            <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
-                                   
-                        </form>
-                    </div>
-                 
+        <div class="modal-dialog">
+            <div class="modal-content  text-center">
+                <div class="modal-header">
+                    <h2 class="modal-title">Admin Login</h2>
                 </div>
+                <div class="modal-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label class="sr-only" for="adminName">Usename</label><input type="text" class="form-control input-sm adminName"
+                                placeholder="Username" name="adminName">
+                        </div> <br><br>
+                        <div class="form-group">
+
+                            <label class="sr-only" for="adminPW">Password</label>
+                            <input type="password" class="form-control input-sm adminPW" placeholder="Password" name="adminPW">
+                        </div><br><br>
+                        <div class="form-group" id="adminErr"> </div>
+                        <br>
+                        <button type="submit" class="btn btnColor adminSubmit">Login</button>
+                        <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
+
+                    </form>
+                </div>
+
             </div>
         </div>
+    </div>
 
 
 
@@ -206,13 +131,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h2 class="logo"><a href="/"> <img  src="/images/footerLogo.png" height="120px" width="150px" > </a></h2>
+                    <h2 class="logo"><a href="/"> <img src="/images/footerLogo.png" height="120px" width="150px"> </a></h2>
                 </div>
                 <div class="col-sm-2">
                     <h5>Get started</h5>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a data-toggle="modal" data-target="#userModal">Sign up</a></li>
+                        <li><a href="/signup">Sign up</a></li>
                         <li><a href="/search">Browse</a></li>
                     </ul>
                 </div>
@@ -231,12 +156,11 @@
                     </ul>
                 </div>
                 <div class="col-sm-2">
-                        <h5>Employee Links</h5>
-                        <ul>
-                            <li><a data-toggle="modal" data-target="#adminModal"> Admin Login</a></li>
-                            <!-- <li><a href="/api/users"> API Users</a></li> -->
-                        </ul>
-                    </div>
+                    <h5>Employee Links</h5>
+                    <ul>
+                        <li><a data-toggle="modal" data-target="#adminModal"> Admin Login</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-copyright">

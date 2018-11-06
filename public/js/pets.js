@@ -1,6 +1,5 @@
 
 //get pets information
-
 const findPets = function () {
 
     $.ajax({ url: `/api/pets`, method: 'GET' })
@@ -15,7 +14,6 @@ const findPets = function () {
 
 //function to render all pets in the container
 const renderPets = function (outputElement, data) {
-
 
 
     for (let i = 0; i < data.length; i++){
@@ -34,17 +32,11 @@ const renderPets = function (outputElement, data) {
             $('<p>').text( data[i].pet_breed),
             //$(`<button class = 'petButton' data-id=${data[i].id}>`).text('More Info'),
 
-
-
         )
 
         output.append(listItems);
 
-
-
-
     }
-
 
 
 }
@@ -75,7 +67,6 @@ const renderPetInfo = function(outputElement, data) {
 
     const output = $(outputElement);
 
-   
     const listItems = $('<div>');
 
     listItems.append(
@@ -85,14 +76,11 @@ const renderPetInfo = function(outputElement, data) {
         $('<p>').text('Kennel#: ' + data.kennel_number)
     )
    
-    
-
      const buttonDiv = $('<br><div>');   
 
      buttonDiv.append(
         $('<button>').text('Back').addClass('btn action-button btn-danger back '), $('<button>').text('Request more info').addClass('btn btnColor btnRequest')
      );
-
 
      output.append(listItems, buttonDiv);
 
@@ -115,21 +103,14 @@ const renderPetImage = function(outputElement, data) {
 
 const goBack = function () {
 
-    // $('#petInf').empty();
-    // $('#filter').show();
-   // $('#petContent').show();
    $('.back').attr('click', function(){
         location.href =  "/search";
    });
 }
 
 
-
-
 //running the function to display all pets 
 findPets();
-
-
 
 
 //filter function
@@ -146,7 +127,7 @@ $('#breed').on('keyup', function () {
 
 const requestInfo = function() {
 
-    location.href = '/contact';
+    location.href = '/signin';
     
 }
 

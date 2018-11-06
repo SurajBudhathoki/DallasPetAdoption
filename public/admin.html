@@ -1,78 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Portal</title>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin Portal</title>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-    
 
 
-    <div class="container">
-        <div class="jumbotron">
-                <div class="row">
-                        <h2> Welcome back!</h2>
-                </div>
+        <!-- Header -->
+        <div class="header">
+                <nav class="navbar navbar-default navigation-clean-button">
+                        <div class="container">
+                                <div class="navbar-header">
+                                        <a class="navbar-brand" href="/"><img id="logo" class="logo" src="/images/DPALogo.png">
+                                        </a>
+                                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                                                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                                                        class="icon-bar"></span><span class="icon-bar"></span></button>
+                                </div>
+                                <div class="collapse navbar-collapse" id="navcol-1">
+                                        <ul class="nav navbar-nav">
 
-                <div class="row">
-                    <h4> Add new pet </h4>
-                    <button id = "petAdd">  Add </button>
+                                        </ul>
 
-                    <div class="col addPet">
-                        <form class="form-inline">
-                            
-                            <div class="form-group">
-                                    <label>Pet Name</label> <input type="text" class="form-control input-sm newName" name = "newName"> 
-                                </div> <br><br>
-                                <div class="form-group">
-                                        <label>Type</label><input type="text" class="form-control input-sm newType">
-                                </div> <br><br>
-                                <div class="form-group">
-                                        <label>Breed</label> <input type="text" class="form-control input-sm newBreed">
-                                </div> <br><br>
-                                <div class="form-group">
-                                        <label>Kennel# </label><input type="text" class="form-control input-sm newKennel">
-                                </div> <br><br>
-                                <div class="form-group">
-                                        <label> Status</label><input type="text" class="form-control input-sm newStatus">
-                                </div> <br><br>
-                                
-                                        <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
-                                        <button type="button" class="btn btn-default cancel" >Cancel</button>
-                               
-                    </form>
-                    </div>
-                </div>
-                <div class="row" >
-                    <h4> Edit existing pet: </h4>
-                </div> <br>
-                <div class="form-group">
-
-                        <select class="custom-select" id = "adminContent">
-                            
-                        </select> <br> <br>
-                        <button class="btn btn-success" id="petSubmit"> Select </button>
-                    </div>
-
-                    <div class=" row" id="thisPetInfo">
-
-                    </div>
-
+                                        <ul class="nav navbar-nav navbar-right">
+                                                <li class="active"> <a class="navLink" href="#"> Admin Portal</a> </li>
+                                        </ul>
+                                </div>
+                        </div>
+                </nav>
         </div>
-       
 
-    </div>
+        <!-- Main Container-->
+        <div class="container">
+                <div class="jumbotron">
+                        <div class="row">
+                                <h2> Welcome back!</h2>
+                        </div>
+
+                        <div class="row">
+                                <h4> Add new pet </h4>
+                                <button id="petAdd"> Add </button>
+
+                                <div class="col addPet">
+                                        <form class="form-inline">
+
+                                                <div class="form-group">
+                                                        <label>Pet Name</label> <input type="text" class="form-control input-sm newName"
+                                                                name="newName">
+                                                </div> <br><br>
+                                                <div class="form-group">
+                                                        <label>Type</label><input type="text" class="form-control input-sm newType">
+                                                </div> <br><br>
+                                                <div class="form-group">
+                                                        <label>Breed</label> <input type="text" class="form-control input-sm newBreed">
+                                                </div> <br><br>
+                                                <div class="form-group">
+                                                        <label>Kennel# </label><input type="text" class="form-control input-sm newKennel">
+                                                </div> <br><br>
+                                                <div class="form-group">
+                                                        <label> Status</label><input type="text" class="form-control input-sm newStatus">
+                                                </div> <br><br>
+
+                                                <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
+                                                <button type="button" class="btn btn-default cancel">Cancel</button>
+
+                                        </form>
+                                </div>
+                        </div>
+                        <div class="row">
+                                <h4> Edit existing pet: </h4>
+                        </div> <br>
+                        <div class="form-group">
+
+                                <select class="custom-select" id="adminContent">
+
+                                </select> <br> <br>
+                                <button class="btn btn-success" id="petSubmit"> Select </button>
+                        </div>
+
+                        <div class=" row" id="thisPetInfo">
+
+                        </div>
+                </div>
+        </div>
+
+        <!-- Admin Modal-->
+        <div class="modal fade" id="adminModal" role="dialog">
+                <div class="modal-dialog">
+                        <div class="modal-content  text-center">
+                                <div class="modal-header">
+                                        <h2 class="modal-title">Admin Login</h2>
+                                </div>
+                                <div class="modal-body">
+                                        <form class="form-inline">
+                                                <div class="form-group">
+                                                        <label class="sr-only" for="adminName">Usename</label><input
+                                                                type="text" class="form-control input-sm adminName"
+                                                                placeholder="Username" name="adminName">
+                                                </div> <br><br>
+                                                <div class="form-group">
+
+                                                        <label class="sr-only" for="adminPW">Password</label>
+                                                        <input type="password" class="form-control input-sm adminPW"
+                                                                placeholder="Password" name="adminPW">
+                                                </div><br><br>
+                                                <div class="form-group" id="adminErr"> </div>
+                                                <br>
+                                                <button type="submit" class="btn btnColor adminSubmit">Login</button>
+                                                <button type="button" class="btn btn-danger action-button cancel"
+                                                        data-dismiss="modal">Cancel</button>
+
+                                        </form>
+                                </div>
+                        </div>
+                </div>
+        </div>
 
 
 
-     <!-- scripts -->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <script src="/js/users.js"></script>
+
+        <!-- footer -->
+        <footer id="myFooter">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-sm-3">
+                                        <h2 class="logo"><a href="/"> <img src="/images/footerLogo.png" height="120px"
+                                                                width="150px"> </a></h2>
+                                </div>
+                                <div class="col-sm-2">
+                                        <h5>Get started</h5>
+                                        <ul>
+                                                <li><a href="/">Home</a></li>
+                                                <li><a href="/signup">Sign up</a></li>
+                                                <li><a href="/search">Browse</a></li>
+                                        </ul>
+                                </div>
+                                <div class="col-sm-2">
+                                        <h5>About us</h5>
+                                        <ul>
+                                                <li><a href="/about">Information</a></li>
+                                                <li><a href="/contact">Contact us</a></li>
+                                        </ul>
+                                </div>
+                                <div class="col-sm-2">
+                                        <h5>API Links</h5>
+                                        <ul>
+                                                <li><a href="/api/pets"> API Pets</a></li>
+                                                <li><a href="/api/users"> API Users</a></li>
+                                        </ul>
+                                </div>
+
+                        </div>
+                </div>
+                <div class="footer-copyright">
+                        <p>© 2018 </p>
+                </div>
+        </footer>
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/js/users.js"></script>
 </body>
+
 </html>

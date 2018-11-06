@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>About</title>
+    <title>Your Homepage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -12,151 +12,111 @@
 
 <body>
 
-        <div>
-                <nav class="navbar navbar-default navigation-clean-button">
-                    <div class="container">
-                        <div class="navbar-header"><a class="navbar-brand" href="/">DPA</a>
-                            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="navcol-1">
-                            <ul class="nav navbar-nav">
-                             
-                                <li><a href="/about">About</a></li>
-                                <li><a href="/search">Browse</a></li>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="/contact">Contact</a></li>
-                            </ul>
-                            <p class="navbar-text navbar-right actions"><a class="navbar-link login" data-toggle="modal"
-                                data-target="#userModal">Log In</a> <a class="btn btn-default action-button" role="button"
-                                data-toggle="modal" data-target="#userModal">Sign Up</a></p>
-                        </div>
-                    </div>
-                </nav>
+    <!-- Header -->
+    <div class="header">
+        <nav class="navbar navbar-default navigation-clean-button">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand" href="/"><img id="logo" class="logo" src="/images/DPALogo.png">
+                    </a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
+                            navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+
+                        <li><a class="navLink" href="/about">About</a></li>
+                        <li><a class="navLink" href="/search">Browse</a></li>
+                        <li><a class="navLink" href="/contact">Contact</a></li>
+
+
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- Main Container -->
+    <div class="container" id="content">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 id='welcomeUser'> Welcome! </h2>
+                </div>
+
+
+                <button class="btn btnColor" id="backBrowse"> Back to Browsing Pets</button>
+                <button class="btn btn-danger action-button logout">Logout</button>
             </div>
 
-<div class="container" id = "content">
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col-md-7">
-                    <h2 id ='welcomeUser' > Welcome! </h2>
+            <div class="row">
+
             </div>
-                
-            
-             <button class="btn btnColor" id = "backBrowse"> Back to Browsing Pets</button> 
-             <button class="btn btn-danger action-button logout">Logout</button>
-        </div>
-            
-        <div class="row">
-            
-        </div>
-        <div class="row " >
+            <div class="row ">
                 <h3> Your Inquiries</h3>
-               
+
 
                 <table class="table table-striped"><br>
-                        <thead>
-                          <tr>
+                    <thead>
+                        <tr>
                             <th scope="col">Name</th>
                             <th scope="col">Kennel #</th>
                             <th scope="col">Date</th>
                             <th scope="col">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
                             <td> Lucy </td>
                             <td> LFD 009</td>
                             <td> 11/7/2018</td>
-                            <td><button class="btn btn-danger " id ='withdraw'> withdraw</button></td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-        </div>
-            
+                            <td><button class="btn btn-danger " id='withdraw'> withdraw</button></td>
+                        </tr>
 
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
 
     </div>
-    
-</div>
 
 
 
 
- <!-- User Modal -->
- <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+    <!-- Admin Modal-->
+    <div class="modal fade" id="adminModal" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-content text-center">
+            <div class="modal-content  text-center">
+                <div class="modal-header">
+                    <h2 class="modal-title">Admin Login</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label class="sr-only" for="adminName">Usename</label><input type="text" class="form-control input-sm adminName"
+                                placeholder="Username" name="adminName">
+                        </div> <br><br>
+                        <div class="form-group">
 
-                <div class="modal-body text-center">
-                    <div role="tabpanel">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li  ><a href="#loginTab" aria-controls="loginTab" role="tab"
-                                    data-toggle="tab">Login</a>
+                            <label class="sr-only" for="adminPW">Password</label>
+                            <input type="password" class="form-control input-sm adminPW" placeholder="Password" name="adminPW">
+                        </div><br><br>
+                        <div class="form-group" id="adminErr"> </div>
+                        <br>
+                        <button type="submit" class="btn btnColor adminSubmit">Login</button>
+                        <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
 
-                            </li>
-                            <li  class="active"><a href="#signupTab" aria-controls="signupTab" role="tab"
-                                    data-toggle="tab">Sign up</a>
-
-                            </li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane " id="loginTab">
-
-                                <form class="form-inline">
-                                    <br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm email"
-                                        placeholder="Email" name="email">
-                                </div> <br><br>
-                                <div class="form-group">
-
-                                    <label class="sr-only" for="password">Password</label>
-                                    <input type="password" class="form-control input-sm pw" placeholder="Password" name="password">
-                                </div><br><br>
-
-
-                                <button type="submit" class="btn btn-info login ">Login</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                </form>
-
-                            </div>
-
-                            <div role="tabpanel" class="tab-pane active" id="signupTab">
-
-                                    <form class="form-inline">
-                                            <br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="fName">First Name</label><input type="text" class="form-control input-sm"
-                                        placeholder="First Name" id="fName" name="fName">
-                                </div> <br><br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="lName">Last Name</label><input type="text" class="form-control input-sm"
-                                        placeholder="Last Name" id="lName" name="lName">
-                                </div> <br><br>
-                                <div class="form-group">
-                                    <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm"
-                                        placeholder="Email" id="email" name="email">
-                                </div> <br><br>
-                                <div class="form-group">
-
-                                    <label class="sr-only" for="password">Password</label>
-                                    <input type="password" class="form-control input-sm" placeholder="Password" id="password"
-                                        name="password">
-                                </div><br><br>
-
-
-
-                                <button type="submit" class="btn btn-info signup">Sign up</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
 
             </div>
@@ -166,52 +126,49 @@
 
 
 
-
-
-
-     <!-- footer -->
-     <footer id="myFooter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <h2 class="logo"><a href="/"> DPA </a></h2>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>Get started</h5>
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a data-toggle="modal" data-target="#userModal">Sign up</a></li>
-                            <li><a href="/search">Browse</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>About us</h5>
-                        <ul>
-                            <li><a href="/about">Information</a></li>
-                            <li><a href="/contact">Contact us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>API Links</h5>
-                        <ul>
-                            <li><a href="/api/pets"> API Pets</a></li>
-                            <li><a href="/api/users"> API Users</a></li>
-                        </ul>
-                    </div>
-    
+    <!-- footer -->
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="logo"><a href="/"> <img src="/images/footerLogo.png" height="120px" width="150px"> </a></h2>
                 </div>
+                <div class="col-sm-2">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/signup">Sign up</a></li>
+                        <li><a href="/search">Browse</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="/about">Information</a></li>
+                        <li><a href="/contact">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>API Links</h5>
+                    <ul>
+                        <li><a href="/api/pets"> API Pets</a></li>
+                        <li><a href="/api/users"> API Users</a></li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="footer-copyright">
-                <p>© 2018 </p>
-            </div>
-        </footer>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 </p>
+        </div>
+    </footer>
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/users.js"></script>
- 
+
 </body>
 
 </html>

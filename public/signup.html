@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Sign Up</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -12,63 +12,144 @@
 
 <body>
 
-        <!-- Header -->
-        <div class="header">
-            <nav class="navbar navbar-default navigation-clean-button">
-                <div class="container">
-                    <div class="navbar-header"><a class="navbar-brand" href="/"><img id ="logo" src="/images/DPALogo.png"> </a>
-                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
-                                navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navcol-1">
-                        <ul class="nav navbar-nav">
-    
-                            <li><a class="navLink" href="/about">About</a></li>
-                            <li><a class="navLink" href="/search">Browse</a></li>
-                            <li><a class="navLink" href="/contact">Contact</a></li>
-                            <li><a class="navLink" href="/signin"> Sign In</a></li>
-    
-                        </ul>
-                     
-                    </div>
+    <!-- Header -->
+    <div class="header">
+        <nav class="navbar navbar-default navigation-clean-button">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand" href="/"><img id="logo" src="/images/DPALogo.png">
+                    </a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle
+                            navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
-            </nav>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+
+                        <li><a class="navLink" href="/about">About</a></li>
+                        <li><a class="navLink" href="/search">Browse</a></li>
+                        <li><a class="navLink" href="/contact">Contact</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> <a class="navLink" href="/signin"> Sign In</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="jumbotron text-center">
+            <div class="header ">
+                <h1>Sign Up </h1>
+            </div>
+            <hr>
+            <form id="signup" name="signup" method="post" action="/signup">
+
+                <div class="form-group">
+                    <input class="form-control" name="firstname" required type="text" placeholder="First Name" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="lastname" required type="text" placeholder="Last Name" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control " name="email" type="email" required placeholder="Email Address" />
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control " name="password" type="password" required placeholder="Password" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btnColor action-button" type="submit" value="Sign Up" />
+                    <input type="button" class="btn btn-danger action-button signinCancel" id="cancel" value="Cancel" />
+
+                </div>
+
+            </form>
+
         </div>
+    </div>
 
-        <div class="container">
-            <div class="jumbotron text-center">
-                <div class="header "> <h1>Sign Up </h1></div> <hr>
-                <form id="signup" name="signup" method="post" action="/signup">
 
-                            <div class="form-group">
-                                    <input  class="form-control"  name="firstname" required type="text"  placeholder="First Name"/>
-                             </div> 
-                             <div class="form-group">
-                                    <input class="form-control"  name="lastname" required type="text"  placeholder="Last Name"/>
-                             </div>                         
-                         <div class="form-group">
-                                <input  class="form-control "  name="email" type="email"  required placeholder="Email Address"/>
-                         </div>   
-                    
-                         <div class="form-group">    
-                            <input class="form-control "  name="password" type="password" required placeholder="Password"/>
-                         </div> 
-                         <div class="form-group">
-                                <input class="btn btnColor action-button" type="submit" value="Sign Up" />
-                                <input type="button" class="btn btn-danger action-button signinCancel" id ="cancel" value="Cancel"/> 
-                       
-                         </div>  
+    <!-- Admin Modal-->
+    <div class="modal fade" id="adminModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content  text-center">
+                <div class="modal-header">
+                    <h2 class="modal-title">Admin Login</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label class="sr-only" for="adminName">Usename</label><input type="text" class="form-control input-sm adminName"
+                                placeholder="Username" name="adminName">
+                        </div> <br><br>
+                        <div class="form-group">
 
-                           
-                          </form>
-                          
+                            <label class="sr-only" for="adminPW">Password</label>
+                            <input type="password" class="form-control input-sm adminPW" placeholder="Password" name="adminPW">
+                        </div><br><br>
+                        <div class="form-group" id="adminErr"> </div>
+                        <br>
+                        <button type="submit" class="btn btnColor adminSubmit">Login</button>
+                        <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
+
+                    </form>
+                </div>
+
             </div>
         </div>
+    </div>
 
-  <!-- scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="/js/users.js"></script>
+
+    <!-- footer -->
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="logo"><a href="/"> <img src="/images/footerLogo.png" height="120px" width="150px"> </a></h2>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/signup">Sign up</a></li>
+                        <li><a href="/search">Browse</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="/about">Information</a></li>
+                        <li><a href="/contact">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>API Links</h5>
+                    <ul>
+                        <li><a href="/api/pets"> API Pets</a></li>
+                        <li><a href="/api/users"> API Users</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Employee Links</h5>
+                    <ul>
+                        <li><a data-toggle="modal" data-target="#adminModal"> Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 </p>
+        </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/users.js"></script>
 
 </body>
+
 </html>
