@@ -597,3 +597,8 @@ table, th, td {
 .custom-select {
   width: 300px;
 }
+
+.requestPet {
+  height: 250px;
+  width: 250px;
+}

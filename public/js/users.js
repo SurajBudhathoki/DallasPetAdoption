@@ -4,11 +4,11 @@
 
 //contact modal
 $('.action-button').on('click', function () {
-    
+
     const email = $('#form_email').val();
     const message = $('#form_message').val();
 
-    if (email !== '' &&  message !== '') {
+    if (email !== '' && message !== '') {
         $('#contactModal').modal('toggle');
         $('#emailDiv').empty();
         $('#messageDiv').empty();
@@ -23,7 +23,7 @@ $('.action-button').on('click', function () {
         $('#messageDiv').append('Please enter message!').css({ "color": "red", "font-size": "100%" });
 
     }
-    
+
 });
 
 
@@ -40,19 +40,58 @@ $('#backBrowse').on('click', function () {
 
 
 //logging out the user
-    $('.logout').on('click', function () {
+$('.logout').on('click', function () {
 
-        location.href = "/logout";
-       
-    })
+    location.href = "/logout";
+
+})
 
 
 //routing back to the homepage on clicking cancel
-$('#cancel').on('click', function () {
-        location.href = "/";
-    });
+$('#adminancel').on('click', function () {
+    location.href = "/";
+});
 
 
+
+// cancel request
+
+const cancelRequest = function() {
+
+    location.href = "/user";
+}
+
+
+//confirming pet request from the user 
+
+const requestPetInfo = function ()   {
+
+    alert('Request submitted!');
+
+    //clearing out the field once completed
+    $('#reqContent').text('');
+
+    const id = $(this).attr('data-id');
+  
+  
+    addToInquiries(id);
+}
+
+const addToInquiries = function(id) {
+
+   
+    const inquiries = [];
+    console.log(id);
+
+    $.get(`/api/pets/${id}`, function(data) {
+        console.log(data);
+        inquiries.push(data.pet_name);
+        console.log(inquiries);
+    })
+
+  
+
+}
 
 
 //-------------------------------------------------------
@@ -81,7 +120,7 @@ const adminLogin = function () {
 
 $('.adminSubmit').on('click', adminLogin);
 
-$('.cancel').on('click', function() {
+$('.cancel').on('click', function () {
     location.href = "/admin";
 })
 
@@ -89,17 +128,13 @@ $('.cancel').on('click', function() {
 $('.newpetSubmit').on('click', function (event) {
 
     $('#thisPetInfo').show();
-    // $('.newName').val('');
-    // $('.newType').val('');
-    // $('.newBreed').val('');
-    // $('.newKennel').val('');
-    // $('.newStatus').val('');
+
     $('#addError').empty();
-    
+
 
     event.preventDefault();
 
-   
+
 
     output = $('.addPet');
 
@@ -120,8 +155,8 @@ $('.newpetSubmit').on('click', function (event) {
     }
 
 
-   
 
+    //POST request to add new pet
     $.post('/api/pets', newPet, function (data) {
 
         if (data.success) {
@@ -132,9 +167,9 @@ $('.newpetSubmit').on('click', function (event) {
             $('.newKennel').val('');
             $('.newStatus').val('');
             alert('Pet added successfully!');
-         
-           
-           
+
+
+
         }
 
         else {
@@ -142,21 +177,17 @@ $('.newpetSubmit').on('click', function (event) {
         }
     })
 
-    
+
 });
 
 
 
-   
 
 
 
 
 
-
-
-
-
+//Get request for pets
 const petsForAdmin = function () {
 
     $.ajax({ url: '/api/pets/', method: 'GET' }).then(function (petList) {
@@ -167,6 +198,7 @@ const petsForAdmin = function () {
     })
 }
 
+//rendering the pet names in the dropdown
 const renderPetsName = function (datalist) {
 
     let rowsToAdd = [];
@@ -177,6 +209,8 @@ const renderPetsName = function (datalist) {
 
     $('#adminContent').append(rowsToAdd);
     $('#petSubmit').on('click', findOneProduct);
+    $('#confirmReq').on('click', findOneProduct);
+
 
 }
 
@@ -240,9 +274,10 @@ const deleteThisPet = function () {
 
 //rendering pet info to the html
 const renderThisPetsInfo = function (data) {
-
+    const useroutput = $('#reqContent');
     const output = $("#currentInfo");
 
+    //creating body to send to admin page
     const divBody = $('<li>').addClass('list-group-item mt-4').attr('id', data.id);
 
     divBody.append(
@@ -253,31 +288,60 @@ const renderThisPetsInfo = function (data) {
         $('<h3>').text('Kennel#: ' + data.kennel_number),
         $('<h3>').text('Status: ' + data.kennel_status),
         $('<button >')
-        .text('Edit')
-        .addClass('btn btnColor editme')
-        .attr('data-id', data.id),
-    $('<button>')
-        .text('Delete')
-        .addClass('btn btn-danger action-button deleteme')
-        .attr('data-id', data.id)
+            .text('Edit')
+            .addClass('btn btnColor editme')
+            .attr('data-id', data.id),
+        $('<button>')
+            .text('Delete')
+            .addClass('btn btn-danger action-button deleteme')
+            .attr('data-id', data.id)
 
     )
 
 
-    // const buttonsDiv = $('<div>').addClass('float-right');
+    
 
-    // buttonsDiv.append(
-       
-    // );
+    //creating body to send to user page
+    const reqBodyContent =  $('<li>').addClass('list-group-item mt-4').attr('id', data.id);
 
+    reqBodyContent.append(
+
+        $('<img>').attr('src', data.pet_image).addClass('requestPet'),
+        $('<h2>').text('Name: ' + data.pet_name),
+        $('<h3>').text('Type: ' + data.pet_type),
+        $('<h3>').text('Breed: ' + data.pet_breed),
+        $('<h3>').text('Kennel#: ' + data.kennel_number),
+        $('<h3>').text('Status: ' + data.kennel_status),
+        $('<button >')
+            .text('Confirm Request')
+            .addClass('btn btnColor requestButton')
+            .attr('data-id', data.id),
+        $('<button>')
+            .text('Cancel')
+            .addClass('btn btn-danger action-button cancelButton')
+ 
+
+    )
+
+
+
+   //sending to admin page
     output.html(divBody);
+    //sending to user page
+    useroutput.html(reqBodyContent);
 
+    //buttons for admin    
     $('.editme').on('click', renderUpdateFields);
     $('.deleteme').on('click', deleteThisPet);
 
+
+    //buttons for user
+    $('.requestButton').on('click', requestPetInfo);
+    $('.cancelButton').on('click', cancelRequest);
 }
 
 
+//rendering fields for the admin to enter the information to update
 const renderUpdateFields = function () {
 
     const output = $("#updateInfo");
@@ -321,12 +385,12 @@ const renderUpdateFields = function () {
             .text('Cancel')
             .addClass('btn btn-danger action-button cancel float-right')
             .attr('id', `cancel-${id}`), $(`<br><br>`),
-          $('<div>').attr('id', 'updateError')  
+        $('<div>').attr('id', 'updateError')
     ];
 
     divBody.append(listItem);
     output.html(divBody);
-  
+
 
     const old = $(`#${id}`).html();
 
@@ -339,13 +403,13 @@ const renderUpdateFields = function () {
 
     $(`#submit-${id}`).on('click', function () {
         $('#updateError').empty();
-    
+
         petUpdates(id);
     });
 
 }
 
-
+//sending the update to the database
 function petUpdates(id) {
 
     const newPet = {
@@ -358,8 +422,8 @@ function petUpdates(id) {
 
     for (let key in newPet) {
         if (newPet[key] === '') {
- 
-           $('#updateError').text('Plase fill all fields!').css({ "color": "red", "font-size": "100%" });
+
+            $('#updateError').text('Plase fill all fields!').css({ "color": "red", "font-size": "100%" });
             return;
         }
     }
