@@ -62,6 +62,9 @@
                                         aria-expanded="false" aria-controls="editPet">
                                         Edit an existing pet
                                 </button>
+                                <button class="btn btn-success action-button refresh" >
+                                        Refresh
+                                </button>
 
 
                         </div>
@@ -70,9 +73,9 @@
 
 
                                 <div class="col addPet"> <br><br>
-                                        <form class="form-inline">
+                                        <form class="form-inline" id="petAddForm">
 
-                                                <div class="form-group">
+                                                <div class="form-group" >
                                                         <label class="addingPet">Pet Name</label> <input type="text"
                                                                 class="form-control  newName" name="newName">
                                                 </div> <br><br>
@@ -97,7 +100,7 @@
                                                 </div><br><br>
 
                                                 <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
-                                                <button type="button" class="btn btn-danger  action-button cancel">Cancel</button>
+                                                <button type="button" class="btn btn-danger  action-button cancelAdd">Cancel</button>
 
                                         </form>
                                 </div>
@@ -112,7 +115,7 @@
 
                                                         </select> <br> <br>
                                                         <button class="btn btnColor" id="petSubmit"> Select </button>
-                                                        <button type="button" class="btn btn-danger  action-button cancel">Cancel</button>
+                                                        <button type="button" class="btn btn-danger  action-button cancelEdit">Cancel</button>
                                                 </div>
                                         </div>
                                 </div>
@@ -129,80 +132,86 @@
 
                                 </div>
                         </div> <br>
-                </div>
+                </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
 
-        <!-- Admin Modal-->
-        <div class="modal fade" id="adminModal" role="dialog">
+  
+
+
+
+
+ <!-- Admin Modal-->
+ <div class="modal fade" id="adminModal" role="dialog">
                 <div class="modal-dialog">
-                        <div class="modal-content  text-center">
-                                <div class="modal-header">
-                                        <h2 class="modal-title">Admin Login</h2>
-                                </div>
-                                <div class="modal-body">
-                                        <form class="form-inline">
-                                                <div class="form-group">
-                                                        <label class="sr-only" for="adminName">Usename</label><input
-                                                                type="text" class="form-control input-sm adminName"
-                                                                placeholder="Username" name="adminName">
-                                                </div> <br><br>
-                                                <div class="form-group">
-
-                                                        <label class="sr-only" for="adminPW">Password</label>
-                                                        <input type="password" class="form-control input-sm adminPW"
-                                                                placeholder="Password" name="adminPW">
-                                                </div><br><br>
-                                                <div class="form-group" id="adminErr"> </div>
-                                                <br>
-                                                <button type="submit" class="btn btnColor adminSubmit">Login</button>
-                                                <button type="button" id="adminCancel" data-dismiss="modal">Cancel</button>
-
-                                        </form>
-                                </div>
+                    <div class="modal-content  text-center">
+                        <div class="modal-header">
+                            <h2 class="modal-title">Admin Login</h2>
                         </div>
+                        <div class="modal-body">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label class="sr-only" for="adminName">Usename</label><input type="text" class="form-control input-sm adminName"
+                                        placeholder="Username" name="adminName">
+                                </div> <br><br>
+                                <div class="form-group">
+        
+                                    <label class="sr-only" for="adminPW">Password</label>
+                                    <input type="password" class="form-control input-sm adminPW" placeholder="Password" name="adminPW">
+                                </div><br><br>
+                                <div class="form-group" id="adminErr"> </div>
+                                <br>
+                                <button type="submit" class="btn btnColor adminSubmit">Login</button>
+                                <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
+        
+                            </form>
+                        </div>
+        
+                    </div>
                 </div>
-        </div>
-
-
-
-
-        <!-- footer -->
-        <footer id="myFooter">
+            </div>
+        
+        
+        
+        
+            <!-- footer -->
+            <footer id="myFooter">
                 <div class="container">
-                        <div class="row">
-                                <div class="col-sm-3">
-                                        <h2 class="logo"><a href="/"> <img src="/images/footerLogo.png" height="120px"
-                                                                width="150px"> </a></h2>
-                                </div>
-                                <div class="col-sm-2">
-                                        <h5>Get started</h5>
-                                        <ul>
-                                                <li><a href="/">Home</a></li>
-                                                <li><a href="/signup">Sign up</a></li>
-                                                <li><a href="/search">Browse</a></li>
-                                        </ul>
-                                </div>
-                                <div class="col-sm-2">
-                                        <h5>About us</h5>
-                                        <ul>
-                                                <li><a href="/about">Information</a></li>
-                                                <li><a href="/contact">Contact us</a></li>
-                                        </ul>
-                                </div>
-                                <div class="col-sm-2">
-                                        <h5>API Links</h5>
-                                        <ul>
-                                                <li><a href="/api/pets"> API Pets</a></li>
-                                                <li><a href="/api/users"> API Users</a></li>
-                                        </ul>
-                                </div>
-
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h2 class="logo"><a href="/"> <img src="/images/footerLogo.png" height="120px" width="150px"> </a></h2>
                         </div>
+                        <div class="col-sm-2">
+                            <h5>Get started</h5>
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/signup">Sign up</a></li>
+                                <li><a href="/search">Browse</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <h5>About us</h5>
+                            <ul>
+                                <li><a href="/about">Information</a></li>
+                                <li><a href="/contact">Contact us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <h5>API Links</h5>
+                            <ul>
+                                <li><a href="/api/pets"> API Pets</a></li>
+                                <li><a href="/api/users"> API Users</a></li>
+                            </ul>
+                        </div>
+        
+                    </div>
                 </div>
                 <div class="footer-copyright">
-                        <p>© 2018 </p>
+                    <p>© 2018 </p>
                 </div>
-        </footer>
+            </footer>
+
+
+
 
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

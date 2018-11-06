@@ -58,7 +58,7 @@ $('#adminancel').on('click', function () {
 
 const cancelRequest = function() {
 
-    location.href = "/user";
+    $('#reqContent').text('');
 }
 
 
@@ -85,13 +85,45 @@ const addToInquiries = function(id) {
 
     $.get(`/api/pets/${id}`, function(data) {
         console.log(data);
-        inquiries.push(data.pet_name);
+        inquiries.push(data);
         console.log(inquiries);
+
+        inquiriesToTable(data);
     })
 
   
 
+};
+
+
+const inquiriesToTable = function(data) {
+
+    const d = new Date();
+    date = d.toDateString();
+    console.log(date);
+
+
+    const inquiries = $('#inquiries');
+
+    const tableItems = $('<tr>').attr('id', data.id);
+
+    tableItems.append(
+        $('<td>').text(data.pet_name),
+        // $('<td>').text(data.pet_type),
+        // $('<td>').text(data.pet_breed),
+        $('<td>').text(data.kennel_number),
+        $('<td>').text(date),
+        $('<td>').text('None required at this point' )
+
+    )
+
+    inquiries.append(tableItems);
+
+
+    
 }
+
+
 
 
 //-------------------------------------------------------
@@ -120,14 +152,28 @@ const adminLogin = function () {
 
 $('.adminSubmit').on('click', adminLogin);
 
-$('.cancel').on('click', function () {
+
+
+$('.refresh').on('click', function() {
     location.href = "/admin";
 })
+
+// cancelling the add request
+$('.cancelAdd').on('click', function () {
+    //$('#petAddForm').text('');
+    location.href = "/admin";
+})
+
+
+//cancelling the edit request
+$('.cancelEdit').on('click', function() {
+   $('#currentInfo').text('');
+})
+
 
 //adding new pet 
 $('.newpetSubmit').on('click', function (event) {
 
-    $('#thisPetInfo').show();
 
     $('#addError').empty();
 
@@ -255,6 +301,8 @@ const deleteThisPet = function () {
 
             if (data.success) {
                 alert('Pet has been deleted');
+                $('#currentInfo').text('');
+                $('#updateInfo').text('');
             }
             else {
                 alert('there was an error');
@@ -396,7 +444,9 @@ const renderUpdateFields = function () {
 
     $(`#cancel-${id}`).on('click', function () {
 
-        location.href = '/admin';
+        $('#updateInfo').text('');
+        $('#currentInfo').text('');
+        
         $(`#${id}`).empty().append(old);
         $(`#edit-${id}`).off('click');
     });
