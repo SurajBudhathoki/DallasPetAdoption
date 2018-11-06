@@ -166,6 +166,18 @@
   color: #00a4ff;
 }
 
+.fa-star {
+  color: red
+}
+
+.fa-arrow-right {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.jumbotron {
+  background-color: #e8e8e8;
+}
 
 /* CSS used for positioning the footers at the bottom of the page. */
 
@@ -316,7 +328,9 @@ table, th, td {
   margin-left: 50px;
 }
 
-
+.coreValues {
+  font-size: 20px;
+}
 
   /* Pulse */
 @-webkit-keyframes hvr-pulse {
