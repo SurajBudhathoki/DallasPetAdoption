@@ -296,10 +296,7 @@ const deleteThisPet = function () {
 
     $('#confirmModal').modal('toggle');
 
-   // let decide = confirm('Are you sure?');
 
-
-   // if (decide) {
 
     $('.confirmDel').on('click', function() {
 
@@ -318,13 +315,6 @@ const deleteThisPet = function () {
         })
     }) 
 
-
-
-    //}
-
-    // else {
-    //     console.log('Action cancelled.');
-    // }
 
 
 }
