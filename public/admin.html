@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    
+        <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
         <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -43,16 +43,16 @@
 
         <!-- Main Container-->
         <div class="container">
-                <div class="jumbotron">
+                <div class="jumbotron adminJumbo">
                         <div class="row">
                                 <div class="col-md-10">
-                                        <h2> Welcome back!</h2>
+                                        <h2> Welcome to the Admin Portal</h2>
                                 </div>
                                 <button class="btn btn-danger action-button logout">Logout</button>
-                        </div>
+                        </div> <br><br>
 
                         <div class="row">
-                                <h3> <b>Actions </b> </h3>
+                                <h3 id = "act"> <b>Actions </b> </h3>
 
 
                                 <button class="btn btnColor" type="button" data-toggle="collapse" data-target="#addPet"
@@ -71,40 +71,43 @@
                         </div>
                         <div class="collapse" id="addPet">
 
+                                <div class="row">
+                                                <div class="col-md-6 "> <br><br>
+                                                        <form class="list-group-item form-inline" id="petAddForm">
+                
+                                                                <div >
+                                                                                <label >Pet Name</label> <input type="text"
+                                                                                class="form-control  newName" name="newName">
+                                                                </div> <br><br>
+                                                                <div>
+                                                                        <label >Type</label>
+                                                                        <input type="text" class="form-control  newType">
+                                                                </div> <br><br>
+                                                                <div>
+                                                                        <label>Breed</label>
+                                                                        <input type="text" class="form-control  newBreed">
+                                                                </div> <br><br>
+                                                                <div>
+                                                                        <label>Kennel# </label>
+                                                                        <input type="text" class="form-control  newKennel">
+                                                                </div> <br><br>
+                                                                <div>
+                                                                        <label> Status</label>
+                                                                        <input type="text" class="form-control  newStatus">
+                                                                </div> <br><br>
+                                                                <div class="form-group" id="addError">
+                
+                                                                </div><br><br>
+                
+                                                                <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
+                                                                <button type="button" class="btn btn-danger  action-button cancelAdd">Cancel</button>
+                
+                                                        </form>
+                                                </div>
 
-
-                                <div class="col addPet"> <br><br>
-                                        <form class="form-inline" id="petAddForm">
-
-                                                <div class="form-group" >
-                                                        <label class="addingPet">Pet Name</label> <input type="text"
-                                                                class="form-control  newName" name="newName">
-                                                </div> <br><br>
-                                                <div class="form-group">
-                                                        <label class="addingPet">Type</label>
-                                                        <input type="text" class="form-control  newType">
-                                                </div> <br><br>
-                                                <div class="form-group">
-                                                        <label class="addingPet">Breed</label>
-                                                        <input type="text" class="form-control  newBreed">
-                                                </div> <br><br>
-                                                <div class="form-group">
-                                                        <label class="addingPet">Kennel# </label>
-                                                        <input type="text" class="form-control  newKennel">
-                                                </div> <br><br>
-                                                <div class="form-group">
-                                                        <label class="addingPet"> Status</label>
-                                                        <input type="text" class="form-control  newStatus">
-                                                </div> <br><br>
-                                                <div class="form-group" id="addError">
-
-                                                </div><br><br>
-
-                                                <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
-                                                <button type="button" class="btn btn-danger  action-button cancelAdd">Cancel</button>
-
-                                        </form>
                                 </div>
+
+                              
                         </div>
                         <div class="collapse" id="editPet">
 
@@ -124,16 +127,16 @@
 
                                 <div class=" row" id="thisPetInfo">
 
-                                        <div class="col-md-6" id="currentInfo">
+                                        <div class="col-md-5" id="currentInfo">
 
                                         </div>
-                                        <div class="col-md-6 form-group" id="updateInfo">
+                                        <div class="col-md-7 form-inline" id="updateInfo">
 
                                         </div>
 
                                 </div>
-                        </div> <br>
-                </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div> 
         </div>
 
   

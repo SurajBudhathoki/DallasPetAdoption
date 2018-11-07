@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -55,12 +56,11 @@
             <br>
             <div class="row">
                 <img id = "profilePic" src = "images/placeholder.jpg"/> <br><br>
-                <label class="custom-file-label"> Add a picture </label>
-                <input type="file" class="custom-file-input"> 
+              
                 
             </div>
             <div class="row">
-                <h3> <b>Actions </b>  </h3>
+                <h3 id = "act"> <b>Actions </b>  </h3>
             
                 <button class="btn btnColor" type="button" data-toggle="collapse" data-target="#req" aria-expanded="false" aria-controls="req">
                   Make a request
@@ -78,7 +78,7 @@
                   </select><br>
                   <button class="btn btn-success action-button" id="confirmReq"> Select</button> <br><br>
                 </div>
-                <div id = "reqContent">
+                <div id = "reqContent" class="col-md-8">
 
                 </div>
               </div>

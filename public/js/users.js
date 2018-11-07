@@ -19,8 +19,8 @@ $('.action-button').on('click', function () {
 
     }
     else {
-        $('#emailDiv').append('Please enter email!').css({ "color": "red", "font-size": "100%" });
-        $('#messageDiv').append('Please enter message!').css({ "color": "red", "font-size": "100%" });
+        $('#emailDiv').text('Please enter email!').css({ "color": "red", "font-size": "100%" });
+        $('#messageDiv').text('Please enter message!').css({ "color": "red", "font-size": "100%" });
 
     }
 
@@ -333,11 +333,11 @@ const renderThisPetsInfo = function (data) {
 
     divBody.append(
 
-        $('<h2>').text('Name: ' + data.pet_name),
-        $('<h3>').text('Type: ' + data.pet_type),
-        $('<h3>').text('Breed: ' + data.pet_breed),
-        $('<h3>').text('Kennel#: ' + data.kennel_number),
-        $('<h3>').text('Status: ' + data.kennel_status),
+        $('<p>').text('Name: ' + data.pet_name),
+        $('<p>').text('Type: ' + data.pet_type),
+        $('<p>').text('Breed: ' + data.pet_breed),
+        $('<p>').text('Kennel#: ' + data.kennel_number),
+        $('<p>').text('Status: ' + data.kennel_status),
         $('<button >')
             .text('Edit')
             .addClass('btn btnColor editme')
@@ -353,16 +353,16 @@ const renderThisPetsInfo = function (data) {
     
 
     //creating body to send to user page
-    const reqBodyContent =  $('<li>').addClass('list-group-item mt-4').attr('id', data.id);
+    const reqBodyContent =  $('<li>').addClass('list-group-item mt-4  curr').attr('id', data.id);
 
     reqBodyContent.append(
 
         $('<img>').attr('src', data.pet_image).addClass('requestPet'),
-        $('<h2>').text('Name: ' + data.pet_name),
-        $('<h3>').text('Type: ' + data.pet_type),
-        $('<h3>').text('Breed: ' + data.pet_breed),
-        $('<h3>').text('Kennel#: ' + data.kennel_number),
-        $('<h3>').text('Status: ' + data.kennel_status),
+        $('<p>').text('Name: ' + data.pet_name),
+        $('<p>').text('Type: ' + data.pet_type),
+        $('<p>').text('Breed: ' + data.pet_breed),
+        $('<p>').text('Kennel#: ' + data.kennel_number),
+        $('<p>').text('Status: ' + data.kennel_status),
         $('<button >')
             .text('Confirm Request')
             .addClass('btn btnColor requestButton')
@@ -400,32 +400,32 @@ const renderUpdateFields = function () {
     const id = $(this).attr('data-id');
     console.log(id);
 
-    const divBody = $('<li>').addClass('list-group-item mt-4');
+    const divBody = $('<li>').addClass('list-group-item mt-4 curr');
 
     listItem = [
-        $('<h6>').text('Name: '),
+        $('<h4>').text('Name: '),
         $('<input>')
-            .addClass('form-control-md-4')
+            .addClass('form-control')
             .attr('type', 'text')
             .attr('id', `pet-name-${id}`),
-        $('<h6>').text('Type: '),
+        $('<h4>').text('Type: '),
         $('<input>')
-            .addClass('form-control-md-4')
+            .addClass('form-control')
             .attr('type', 'text')
             .attr('id', `pet-type-${id}`),
-        $('<h6>').text('Breed: '),
+        $('<h4>').text('Breed: '),
         $('<input>')
-            .addClass('form-control-md-4')
+            .addClass('form-control')
             .attr('type', 'text')
             .attr('id', `pet-breed-${id}`),
-        $('<h6>').text('Kennel #: '),
+        $('<h4>').text('Kennel #: '),
         $('<input>')
-            .addClass('form-control-md-4')
+            .addClass('form-control')
             .attr('type', 'text')
             .attr('id', `kennel-number-${id}`),
-        $('<h6>').text('Status: '),
+        $('<h4>').text('Status: '),
         $('<input>')
-            .addClass('form-control-md-4')
+            .addClass('form-control')
             .attr('type', 'text')
             .attr('id', `kennel-status-${id}`), $('<br>'),
         $('<button>')
@@ -486,6 +486,8 @@ function petUpdates(id) {
     $.ajax({ url: `/api/pets/${id}`, method: 'PUT', data: newPet }).then(function (data) {
 
         if (data.success) {
+            $('#currentInfo').text('');
+            $('#updateInfo').text('');
             $(`#pet-name-${id}`).val('');
             $(`#pet-type-${id}`).val('');
             $(`#pet-breed-${id}`).val('');
