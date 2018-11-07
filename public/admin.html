@@ -52,167 +52,193 @@
                         </div> <br><br>
 
                         <div class="row">
-                                <h3 id = "act"> <b>Actions </b> </h3>
-
-
-                                <button class="btn btnColor" type="button" data-toggle="collapse" data-target="#addPet"
-                                        aria-expanded="false" aria-controls="addPet">
-                                        Add a new pet
-                                </button>
-                                <button class="btn btnColor" type="button" data-toggle="collapse" data-target="#editPet"
-                                        aria-expanded="false" aria-controls="editPet">
-                                        Edit an existing pet
-                                </button>
-                                <button class="btn btn-success action-button refresh" >
-                                        Refresh
-                                </button>
-
-
+                                <h3 id="act"> <b>Actions </b> </h3>
+                                <button class="btn btnColor" type="button" data-toggle="collapse" data-target="#addPet" aria-expanded="false" aria-controls="addPet">
+                                Add a new pet</button>
+                                <button class="btn btnColor" type="button" data-toggle="collapse" data-target="#editPet" aria-expanded="false" aria-controls="editPet">
+                                Edit an existing pet</button>
+                                <button class="btn btn-success action-button refresh">Refresh </button>
                         </div>
                         <div class="collapse" id="addPet">
-
                                 <div class="row">
-                                                <div class="col-md-6 "> <br><br>
-                                                        <form class="list-group-item form-inline" id="petAddForm">
-                
-                                                                <div >
-                                                                                <label >Pet Name</label> <input type="text"
-                                                                                class="form-control  newName" name="newName">
-                                                                </div> <br><br>
-                                                                <div>
-                                                                        <label >Type</label>
-                                                                        <input type="text" class="form-control  newType">
-                                                                </div> <br><br>
-                                                                <div>
-                                                                        <label>Breed</label>
-                                                                        <input type="text" class="form-control  newBreed">
-                                                                </div> <br><br>
-                                                                <div>
-                                                                        <label>Kennel# </label>
-                                                                        <input type="text" class="form-control  newKennel">
-                                                                </div> <br><br>
-                                                                <div>
-                                                                        <label> Status</label>
-                                                                        <input type="text" class="form-control  newStatus">
-                                                                </div> <br><br>
-                                                                <div class="form-group" id="addError">
-                
-                                                                </div><br><br>
-                
-                                                                <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
-                                                                <button type="button" class="btn btn-danger  action-button cancelAdd">Cancel</button>
-                
-                                                        </form>
-                                                </div>
+                                        <div class="col-md-6 "> <br><br>
+                                                <form class="list-group-item form-inline" id="petAddForm">
+                                                        <div>
+                                                        <label>Pet Name</label> 
+                                                        <input type="text" class="form-control  newName" name="newName">
+                                                        </div> <br><br>
+                                                        <div>
+                                                        <label>Type</label>
+                                                        <input type="text" class="form-control  newType">
+                                                        </div> <br><br>
+                                                        <div>
+                                                        <label>Breed</label>
+                                                        <input type="text" class="form-control  newBreed">
+                                                        </div> <br><br>
+                                                        <div>
+                                                        <label>Kennel# </label>
+                                                        <input type="text" class="form-control  newKennel">
+                                                        </div> <br><br>
+                                                        <div>
+                                                        <label> Status</label>
+                                                        <input type="text" class="form-control  newStatus">
+                                                        </div> <br><br>
+                                                        <div class="form-group" id="addError">
+                                                        </div><br><br>
+                                                        <button type="submit" class="btn btnColor newpetSubmit"> Add</button>
+                                                        <button type="button" class="btn btn-danger  action-button cancelAdd">Cancel</button>
+                                                </form>
+                                        </div>
 
                                 </div>
 
-                              
+
                         </div>
                         <div class="collapse" id="editPet">
-
                                 <div class="row">
                                         <div class="col-lg-12">
                                                 <div class="form-group">
-                                                        <br><br>
-                                                        <select class="custom-select" id="adminContent">
-
-                                                        </select> <br> <br>
-                                                        <button class="btn action-button btn-success" id="petSubmit"> Select </button>
-                                                       
+                                                <br><br>
+                                                <select class="custom-select" id="adminContent">
+                                                </select> <br> <br>
+                                                 <button class="btn action-button btn-success" id="petSubmit"> Select </button>
                                                 </div>
                                         </div>
                                 </div>
 
 
                                 <div class=" row" id="thisPetInfo">
-
                                         <div class="col-md-5" id="currentInfo">
-
                                         </div>
                                         <div class="col-md-7 form-inline" id="updateInfo">
-
                                         </div>
-
                                 </div>
                         </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                </div> 
+                </div>
         </div>
 
-  
 
 
 
 
- <!-- Admin Modal-->
- <div class="modal fade" id="adminModal" role="dialog">
+        <!-- Add Modal -->
+        <div class="modal fade" id="addModal" role="dialog">
                 <div class="modal-dialog">
-                    <div class="modal-content  text-center">
-                        <div class="modal-header">
-                            <h2 class="modal-title">Admin Login</h2>
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h2 class="modal-title">Confirmation</h2>
+                                </div>
+                                <div class="modal-body contact">
+                                        <h4> Pet added successfully </h4>
+
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
                         </div>
-                        <div class="modal-body">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label class="sr-only" for="adminName">Usename</label><input type="text" class="form-control input-sm adminName"
-                                        placeholder="Username" name="adminName">
-                                </div> <br><br>
-                                <div class="form-group">
-        
-                                    <label class="sr-only" for="adminPW">Password</label>
-                                    <input type="password" class="form-control input-sm adminPW" placeholder="Password" name="adminPW">
-                                </div><br><br>
-                                <div class="form-group" id="adminErr"> </div>
-                                <br>
-                                <button type="submit" class="btn btnColor adminSubmit">Login</button>
-                                <button type="button" class="btn btn-danger action-button cancel" data-dismiss="modal">Cancel</button>
-        
-                            </form>
-                        </div>
-        
-                    </div>
                 </div>
-            </div>
+        </div>
+
+
+   <!-- Confirm Modal -->
+   <div class="modal fade" id="confirmModal" role="dialog">
+                <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h2 class="modal-title">Confirm</h2>
+                                </div>
+                                <div class="modal-body contact">
+                                        <h4> Are you sure? </h4>
+
+                                </div>
+                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-default confirmDel" >Yes</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+
+        <!-- Delete Modal -->
+        <div class="modal fade" id="deleteModal" role="dialog">
+                        <div class="modal-dialog">
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                                <h2 class="modal-title">Confirmation</h2>
+                                        </div>
+                                        <div class="modal-body contact">
+                                                <h4> Pet has been deleted. </h4>
         
+                                        </div>
+                                        <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
         
-        
-        
-            <!-- footer -->
-            <footer id="myFooter">
+
+                  <!-- Update Modal -->
+        <div class="modal fade" id="updateModal" role="dialog">
+                <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h2 class="modal-title">Confirmation</h2>
+                                </div>
+                                <div class="modal-body contact">
+                                        <h4> Update Successful! </h4>
+
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+
+
+
+
+
+        <!-- footer -->
+        <footer id="myFooter">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <h2 class="logo"><a href="/"> <img src="/images/footerLogo.png" height="120px" width="150px"> </a></h2>
+                        <div class="row">
+                                <div class="col-sm-3">
+                                        <h2 class="logo"><a href="/"> <img src="/images/footerLogo.png" height="120px"
+                                                                width="150px"> </a></h2>
+                                </div>
+                                <div class="col-sm-2">
+                                        <h5>Get started</h5>
+                                        <ul>
+                                                <li><a href="/">Home</a></li>
+                                                <li><a href="/signup">Sign up</a></li>
+                                                <li><a href="/search">Browse</a></li>
+                                        </ul>
+                                </div>
+                                <div class="col-sm-2">
+                                        <h5>About us</h5>
+                                        <ul>
+                                                <li><a href="/about">Information</a></li>
+                                                <li><a href="/contact">Contact us</a></li>
+                                        </ul>
+                                </div>
+                                <div class="col-sm-2">
+                                        <h5>API Links</h5>
+                                        <ul>
+                                                <li><a href="/api/pets"> API Pets</a></li>
+                                                <li><a href="/api/users"> API Users</a></li>
+                                        </ul>
+                                </div>
+
                         </div>
-                        <div class="col-sm-2">
-                            <h5>Get started</h5>
-                            <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/signup">Sign up</a></li>
-                                <li><a href="/search">Browse</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-2">
-                            <h5>About us</h5>
-                            <ul>
-                                <li><a href="/about">Information</a></li>
-                                <li><a href="/contact">Contact us</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-2">
-                            <h5>API Links</h5>
-                            <ul>
-                                <li><a href="/api/pets"> API Pets</a></li>
-                                <li><a href="/api/users"> API Users</a></li>
-                            </ul>
-                        </div>
-        
-                    </div>
                 </div>
                 <div class="footer-copyright">
-                    <p>© 2018 </p>
+                        <p>© 2018 </p>
                 </div>
-            </footer>
+        </footer>
 
 
 

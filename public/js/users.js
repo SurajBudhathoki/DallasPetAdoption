@@ -73,7 +73,7 @@ const cancelRequest = function() {
 
 const requestPetInfo = function ()   {
 
-    alert('Request submitted!');
+    $('#requestModal').modal('toggle');
 
     //clearing out the field once completed
     $('#reqContent').text('');
@@ -217,7 +217,7 @@ $('.newpetSubmit').on('click', function (event) {
             $('.newBreed').val('');
             $('.newKennel').val('');
             $('.newStatus').val('');
-            alert('Pet added successfully!');
+            $('#addModal').modal('toggle');
 
 
 
@@ -294,16 +294,21 @@ const deleteThisPet = function () {
     const id = $(this).attr('data-id');
     console.log(id);
 
+    $('#confirmModal').modal('toggle');
 
-    let decide = confirm('Are you sure?');
+   // let decide = confirm('Are you sure?');
 
 
-    if (decide) {
+   // if (decide) {
 
+    $('.confirmDel').on('click', function() {
+
+       
         $.ajax({ url: `/api/pets/${id}`, method: 'DELETE' }).then(function (data) {
 
             if (data.success) {
-                alert('Pet has been deleted');
+                $('#confirmModal').modal('hide');
+                $('#deleteModal').modal('toggle');
                 $('#currentInfo').text('');
                 $('#updateInfo').text('');
             }
@@ -311,12 +316,15 @@ const deleteThisPet = function () {
                 alert('there was an error');
             }
         })
+    }) 
 
-    }
 
-    else {
-        console.log('Action cancelled.');
-    }
+
+    //}
+
+    // else {
+    //     console.log('Action cancelled.');
+    // }
 
 
 }
@@ -493,7 +501,7 @@ function petUpdates(id) {
             $(`#pet-breed-${id}`).val('');
             $(`#kennel-number-${id}`).val('');
             $(`#kennel-status-${id}`).val('');
-            alert('Update Successful!');
+            $('#updateModal').modal('toggle');
         } else {
             alert('Error Occured, Try Again.');
         }
